@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Step 2: Search multiple patterns and save results to a CSV file
       - name: Read CSV file to get Search keyword and do search and save result to CSV
