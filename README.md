@@ -1,2 +1,2 @@
 # iOSVehicleConnectSDK
-ECSP Android VehicleConnect SDK
+ECSP iOS VehicleConnect SDK
