@@ -1,0 +1,22 @@
+[
+  {
+    "manufacturingDate": 1717718400000,
+    "model": "111119",
+    "imei": "358240051111119",
+    "serialNumber": "111119",
+    "platformVersion": "v1",
+    "iccid": "8991101200003111119",
+    "ssid": "SSID-111119",
+    "bssid": "d8:c7:c8:44:32:111119",
+    "msisdn": "+919003111119",
+    "imsi": "410072821111119",
+    "recordDate": 1717718400000,
+    "factoryAdmin": "ignite-prod",
+    "createdDate": 1717766548857,
+    "state": "PROVISIONED",
+    "stolen": false,
+    "faulty": false,
+    "packageSerialNumber": "111119",
+    "deviceType": "dongle"
+  }
+]

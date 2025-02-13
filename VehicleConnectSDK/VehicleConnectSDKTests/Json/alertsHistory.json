@@ -1,0 +1,51 @@
+{
+  "alerts": [
+    {
+      "lastUpdatedTime": [
+        2024,
+        5,
+        28,
+        10,
+        38,
+        27,
+        808000000
+      ],
+      "id": "e7bd7200-1cb7-11ef-a198-34544cc32e4f",
+      "timestamp": 1716876208812,
+      "pdid": "DOZWRTAJDT5163",
+      "userId": "new_user@yopmail.com",
+      "alertType": "GenericNotificationEvent",
+      "payload": {
+        "EventID": "GenericNotificationEvent",
+        "Data": {
+          "alertDataProperties": {
+            "roRequestId": "e7bd7200-1cb7-11ef-a198-ff364cc32e4f",
+            "response": "SUCCESS",
+            "brand": "na",
+            "status": "SUCCESS"
+          },
+          "roRequestId": "e7bd7200-1cb7-11ef-a198-ff364cc32e4f",
+          "response": "SUCCESS",
+          "brand": "na",
+          "status": "SUCCESS"
+        },
+        "Version": "1.0",
+        "BenchMode": 0,
+        "Timezone": 0,
+        "Timestamp": 1716876208812,
+        "pdid": "DOZWRTOJDT5163"
+      },
+      "alertMessage": "Your vehicle venkata's car doors are locked.",
+      "read": true,
+      "deleted": false
+    }
+  ],
+  "pagination": {
+    "total": {
+      "pages": 1,
+      "records": 9
+    },
+    "size": 6,
+    "page": 1
+  }
+}

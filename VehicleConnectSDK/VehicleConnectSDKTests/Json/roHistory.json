@@ -1,0 +1,950 @@
+[
+    {
+      "roStatus": "PROCESSED_FAILED",
+      "roResponseList": [],
+      "roNotificationList": [],
+      "deviceMessageFailures": [
+        {
+          "RequestId": "0e161dd0-2177-11ef-9d9a-c5b4c39a1102",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_STATUS_INACTIVE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "0e161dd0-2177-11ef-9d9a-c5b4c39a1102",
+              "Version": "1.1",
+              "EventID": "RemoteOperationTrunk",
+              "Data": {
+                "roRequestId": "0e161dd0-2177-11ef-9d9a-c5b4c39a1102",
+                "vehicleArchType": "hu",
+                "state": "UNLOCKED"
+              },
+              "Timestamp": 1717398069314
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 0,
+            "deviceStatusInactive": true
+          },
+          "Timestamp": 1717398069480
+        },
+        {
+          "RequestId": "0e161dd0-2177-11ef-9d9a-c5b4c39a1102",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_DELIVERY_CUTOFF_EXCEEDED",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "0e161dd0-2177-11ef-9d9a-c5b4c39a1102",
+              "Version": "1.1",
+              "EventID": "RemoteOperationTrunk",
+              "Data": {
+                "roRequestId": "0e161dd0-2177-11ef-9d9a-c5b4c39a1102",
+                "vehicleArchType": "hu",
+                "state": "UNLOCKED"
+              },
+              "Timestamp": 1717398069314
+            },
+            "deviceDeliveryCutoffExceeded": true,
+            "retryAttempts": 0,
+            "deviceStatusInactive": false
+          },
+          "Timestamp": 1717398821695
+        }
+      ],
+      "roEvent": {
+        "RequestId": "0e161dd0-2177-11ef-9d9a-c5b4c39a1102",
+        "Version": "1.1",
+        "EventID": "RemoteOperationTrunk",
+        "Data": {
+          "roRequestId": "0e161dd0-2177-11ef-9d9a-c5b4c39a1102",
+          "vehicleArchType": "hu",
+          "state": "UNLOCKED"
+        },
+        "Timestamp": 1717398069314
+      }
+    },
+    {
+      "roStatus": "PROCESSED_FAILED",
+      "roResponseList": [],
+      "roNotificationList": [],
+      "deviceMessageFailures": [
+        {
+          "RequestId": "f81ab760-2177-11ef-a8f7-1bd184e29a25",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_STATUS_INACTIVE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "f81ab760-2177-11ef-a8f7-1bd184e29a25",
+              "Version": "1.1",
+              "EventID": "RemoteOperationLights",
+              "Data": {
+                "duration": 60,
+                "roRequestId": "f81ab760-2177-11ef-a8f7-1bd184e29a25",
+                "vehicleArchType": "hu",
+                "state": "ON"
+              },
+              "Timestamp": 1717398461923
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 0,
+            "deviceStatusInactive": true
+          },
+          "Timestamp": 1717398462073
+        },
+        {
+          "RequestId": "f81ab760-2177-11ef-a8f7-1bd184e29a25",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_DELIVERY_CUTOFF_EXCEEDED",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "f81ab760-2177-11ef-a8f7-1bd184e29a25",
+              "Version": "1.1",
+              "EventID": "RemoteOperationLights",
+              "Data": {
+                "duration": 60,
+                "roRequestId": "f81ab760-2177-11ef-a8f7-1bd184e29a25",
+                "vehicleArchType": "hu",
+                "state": "ON"
+              },
+              "Timestamp": 1717398461923
+            },
+            "deviceDeliveryCutoffExceeded": true,
+            "retryAttempts": 0,
+            "deviceStatusInactive": false
+          },
+          "Timestamp": 1717398821720
+        }
+      ],
+      "roEvent": {
+        "RequestId": "f81ab760-2177-11ef-a8f7-1bd184e29a25",
+        "Version": "1.1",
+        "EventID": "RemoteOperationLights",
+        "Data": {
+          "duration": 60,
+          "roRequestId": "f81ab760-2177-11ef-a8f7-1bd184e29a25",
+          "vehicleArchType": "hu",
+          "state": "ON"
+        },
+        "Timestamp": 1717398461923
+      }
+    },
+    {
+      "roStatus": "PROCESSED_SUCCESS",
+      "roResponseList": [],
+      "roNotificationList": [],
+      "deviceMessageFailures": [
+        {
+          "RequestId": "db42e080-2178-11ef-8a49-5daf935bf48b",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "RETRYING_DEVICE_MESSAGE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "db42e080-2178-11ef-8a49-5daf935bf48b",
+              "Version": "1.1",
+              "EventID": "RemoteOperationAlarm",
+              "Data": {
+                "duration": 60,
+                "roRequestId": "db42e080-2178-11ef-8a49-5daf935bf48b",
+                "vehicleArchType": "hu",
+                "state": "ON"
+              },
+              "Timestamp": 1717398843034
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 1,
+            "deviceStatusInactive": false
+          },
+          "Timestamp": 1717398884112
+        }
+      ],
+      "roEvent": {
+        "RequestId": "db42e080-2178-11ef-8a49-5daf935bf48b",
+        "Version": "1.1",
+        "EventID": "RemoteOperationAlarm",
+        "Data": {
+          "duration": 60,
+          "roRequestId": "db42e080-2178-11ef-8a49-5daf935bf48b",
+          "vehicleArchType": "hu",
+          "state": "ON"
+        },
+        "Timestamp": 1717398843034
+      }
+    },
+    {
+      "roStatus": "PROCESSED_SUCCESS",
+      "roResponseList": [],
+      "roNotificationList": [],
+      "deviceMessageFailures": [],
+      "roEvent": {
+        "RequestId": "10ba9f00-2179-11ef-8a49-5daf935bf48b",
+        "Version": "1.1",
+        "EventID": "RemoteOperationDoors",
+        "Data": {
+          "roRequestId": "10ba9f00-2179-11ef-8a49-5daf935bf48b",
+          "vehicleArchType": "hu",
+          "state": "UNLOCKED"
+        },
+        "Timestamp": 1717398932735
+      }
+    },
+    {
+      "roStatus": "PROCESSED_FAILED",
+      "roResponseList": [],
+      "roNotificationList": [],
+      "deviceMessageFailures": [
+        {
+          "RequestId": "e89e6f10-218c-11ef-9788-5bb1fc58df97",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_STATUS_INACTIVE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "e89e6f10-218c-11ef-9788-5bb1fc58df97",
+              "Version": "1.1",
+              "EventID": "RemoteOperationTrunk",
+              "Data": {
+                "roRequestId": "e89e6f10-218c-11ef-9788-5bb1fc58df97",
+                "vehicleArchType": "hu",
+                "state": "UNLOCKED"
+              },
+              "Timestamp": 1717407455379
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 0,
+            "deviceStatusInactive": true
+          },
+          "Timestamp": 1717407455491
+        },
+        {
+          "RequestId": "e89e6f10-218c-11ef-9788-5bb1fc58df97",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_DELIVERY_CUTOFF_EXCEEDED",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "e89e6f10-218c-11ef-9788-5bb1fc58df97",
+              "Version": "1.1",
+              "EventID": "RemoteOperationTrunk",
+              "Data": {
+                "roRequestId": "e89e6f10-218c-11ef-9788-5bb1fc58df97",
+                "vehicleArchType": "hu",
+                "state": "UNLOCKED"
+              },
+              "Timestamp": 1717407455379
+            },
+            "deviceDeliveryCutoffExceeded": true,
+            "retryAttempts": 0,
+            "deviceStatusInactive": false
+          },
+          "Timestamp": 1717491288806
+        }
+      ],
+      "roEvent": {
+        "RequestId": "e89e6f10-218c-11ef-9788-5bb1fc58df97",
+        "Version": "1.1",
+        "EventID": "RemoteOperationTrunk",
+        "Data": {
+          "roRequestId": "e89e6f10-218c-11ef-9788-5bb1fc58df97",
+          "vehicleArchType": "hu",
+          "state": "UNLOCKED"
+        },
+        "Timestamp": 1717407455379
+      }
+    },
+    {
+      "roStatus": "TTL_EXPIRED",
+      "roResponseList": [
+        {
+          "RequestId": "e5b6913c-8baf-44a1-bde4-ef5b2d83ab8b",
+          "Version": "1.1",
+          "EventID": "RemoteOperationResponse",
+          "Data": {
+            "roRequestId": "c27e7450-2250-11ef-b1a8-170f0b21ded7",
+            "response": "SUCCESS_CONTINUE"
+          },
+          "Timestamp": 1717491575470
+        }
+      ],
+      "roNotificationList": [],
+      "deviceMessageFailures": [],
+      "roEvent": {
+        "RequestId": "c27e7450-2250-11ef-b1a8-170f0b21ded7",
+        "Version": "1.1",
+        "EventID": "RemoteOperationTrunk",
+        "Data": {
+          "roRequestId": "c27e7450-2250-11ef-b1a8-170f0b21ded7",
+          "vehicleArchType": "hu",
+          "state": "UNLOCKED"
+        },
+        "Timestamp": 1717491572766
+      }
+    },
+    {
+      "roStatus": "PROCESSED_SUCCESS",
+      "roResponseList": [
+        {
+          "RequestId": "7c39465f-59c4-4a5d-8190-96d7ec6a7e5d",
+          "Version": "1.1",
+          "EventID": "RemoteOperationResponse",
+          "Data": {
+            "roRequestId": "b422a740-2251-11ef-b1a8-170f0b21ded7",
+            "response": "SUCCESS_CONTINUE"
+          },
+          "Timestamp": 1717491980779
+        }
+      ],
+      "roNotificationList": [],
+      "deviceMessageFailures": [],
+      "roEvent": {
+        "RequestId": "b422a740-2251-11ef-b1a8-170f0b21ded7",
+        "Version": "1.1",
+        "EventID": "RemoteOperationLights",
+        "Data": {
+          "duration": 60,
+          "roRequestId": "b422a740-2251-11ef-b1a8-170f0b21ded7",
+          "vehicleArchType": "hu",
+          "state": "ON"
+        },
+        "Timestamp": 1717491978176
+      }
+    },
+    {
+      "roStatus": "PROCESSED_SUCCESS",
+      "roResponseList": [
+        {
+          "RequestId": "7bf068e2-e7d0-4983-9ce7-dc5ceca20402",
+          "Version": "1.1",
+          "EventID": "RemoteOperationResponse",
+          "Data": {
+            "roRequestId": "aa87fb30-2293-11ef-8a49-5daf935bf48b",
+            "response": "SUCCESS_CONTINUE"
+          },
+          "Timestamp": 1717520310853
+        },
+        {
+          "RequestId": "8fe2fcff-005a-438f-af60-b5b4e408081f",
+          "Version": "1.1",
+          "EventID": "RemoteOperationResponse",
+          "Data": {
+            "roRequestId": "aa87fb30-2293-11ef-8a49-5daf935bf48b",
+            "response": "SUCCESS"
+          },
+          "Timestamp": 1717520310944
+        }
+      ],
+      "roNotificationList": [],
+      "deviceMessageFailures": [],
+      "roEvent": {
+        "RequestId": "aa87fb30-2293-11ef-8a49-5daf935bf48b",
+        "Version": "1.1",
+        "EventID": "RemoteOperationWindows",
+        "Data": {
+          "duration": 8,
+          "roRequestId": "aa87fb30-2293-11ef-8a49-5daf935bf48b",
+          "vehicleArchType": "hu",
+          "state": "OPENED",
+          "percent": 60
+        },
+        "Timestamp": 1717520308849
+      }
+    },
+    {
+      "roStatus": "PROCESSED_FAILED",
+      "roResponseList": [],
+      "roNotificationList": [],
+      "deviceMessageFailures": [
+        {
+          "RequestId": "482149a0-2294-11ef-8a49-5daf935bf48b",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_STATUS_INACTIVE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "482149a0-2294-11ef-8a49-5daf935bf48b",
+              "Version": "1.1",
+              "EventID": "RemoteOperationWindows",
+              "Data": {
+                "duration": 8,
+                "roRequestId": "482149a0-2294-11ef-8a49-5daf935bf48b",
+                "vehicleArchType": "hu",
+                "state": "CLOSED",
+                "percent": 60
+              },
+              "Timestamp": 1717520573266
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 0,
+            "deviceStatusInactive": true
+          },
+          "Timestamp": 1717520573371
+        },
+        {
+          "RequestId": "482149a0-2294-11ef-8a49-5daf935bf48b",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_DELIVERY_CUTOFF_EXCEEDED",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "482149a0-2294-11ef-8a49-5daf935bf48b",
+              "Version": "1.1",
+              "EventID": "RemoteOperationWindows",
+              "Data": {
+                "duration": 8,
+                "roRequestId": "482149a0-2294-11ef-8a49-5daf935bf48b",
+                "vehicleArchType": "hu",
+                "state": "CLOSED",
+                "percent": 60
+              },
+              "Timestamp": 1717520573266
+            },
+            "deviceDeliveryCutoffExceeded": true,
+            "retryAttempts": 0,
+            "deviceStatusInactive": false
+          },
+          "Timestamp": 1717520903280
+        }
+      ],
+      "roEvent": {
+        "RequestId": "482149a0-2294-11ef-8a49-5daf935bf48b",
+        "Version": "1.1",
+        "EventID": "RemoteOperationWindows",
+        "Data": {
+          "duration": 8,
+          "roRequestId": "482149a0-2294-11ef-8a49-5daf935bf48b",
+          "vehicleArchType": "hu",
+          "state": "CLOSED",
+          "percent": 60
+        },
+        "Timestamp": 1717520573266
+      }
+    },
+    {
+      "roStatus": "PROCESSED_SUCCESS",
+      "roResponseList": [],
+      "roNotificationList": [],
+      "deviceMessageFailures": [
+        {
+          "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_STATUS_INACTIVE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+              "Version": "1.1",
+              "EventID": "RemoteOperationEngine",
+              "Data": {
+                "duration": 8,
+                "roRequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+                "vehicleArchType": "hu",
+                "state": "STARTED"
+              },
+              "Timestamp": 1717520841687
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 0,
+            "deviceStatusInactive": true
+          },
+          "Timestamp": 1717520841840
+        },
+        {
+          "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_STATUS_INACTIVE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+              "Version": "1.1",
+              "EventID": "RemoteOperationEngine",
+              "Data": {
+                "duration": 8,
+                "roRequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+                "vehicleArchType": "hu",
+                "state": "STARTED"
+              },
+              "Timestamp": 1717520841687
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 0,
+            "deviceStatusInactive": true
+          },
+          "Timestamp": 1717520861506
+        },
+        {
+          "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_STATUS_INACTIVE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+              "Version": "1.1",
+              "EventID": "RemoteOperationEngine",
+              "Data": {
+                "duration": 8,
+                "roRequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+                "vehicleArchType": "hu",
+                "state": "STARTED"
+              },
+              "Timestamp": 1717520841687
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 0,
+            "deviceStatusInactive": true
+          },
+          "Timestamp": 1717520867476
+        },
+        {
+          "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "RETRYING_DEVICE_MESSAGE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+              "Version": "1.1",
+              "EventID": "RemoteOperationEngine",
+              "Data": {
+                "duration": 8,
+                "roRequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+                "vehicleArchType": "hu",
+                "state": "STARTED"
+              },
+              "Timestamp": 1717520841687
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 1,
+            "deviceStatusInactive": false
+          },
+          "Timestamp": 1717520903333
+        },
+        {
+          "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "RETRYING_DEVICE_MESSAGE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+              "Version": "1.1",
+              "EventID": "RemoteOperationEngine",
+              "Data": {
+                "duration": 8,
+                "roRequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+                "vehicleArchType": "hu",
+                "state": "STARTED"
+              },
+              "Timestamp": 1717520841687
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 2,
+            "deviceStatusInactive": false
+          },
+          "Timestamp": 1717520903361
+        },
+        {
+          "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "RETRY_ATTEMPTS_EXCEEDED",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+              "Version": "1.1",
+              "EventID": "RemoteOperationEngine",
+              "Data": {
+                "duration": 8,
+                "roRequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+                "vehicleArchType": "hu",
+                "state": "STARTED"
+              },
+              "Timestamp": 1717520841687
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 2,
+            "deviceStatusInactive": false
+          },
+          "Timestamp": 1717520903389
+        }
+      ],
+      "roEvent": {
+        "RequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+        "Version": "1.1",
+        "EventID": "RemoteOperationEngine",
+        "Data": {
+          "duration": 8,
+          "roRequestId": "e81e9fc0-2294-11ef-8a49-5daf935bf48b",
+          "vehicleArchType": "hu",
+          "state": "STARTED"
+        },
+        "Timestamp": 1717520841687
+      }
+    },
+    {
+      "roStatus": "PROCESSED_SUCCESS",
+      "roResponseList": [
+        {
+          "RequestId": "8cba8926-223e-443f-9899-16e64b68b669",
+          "Version": "1.1",
+          "EventID": "RemoteOperationResponse",
+          "Data": {
+            "roRequestId": "2c405070-2346-11ef-bb8a-47557f0b3b3c",
+            "response": "SUCCESS_CONTINUE"
+          },
+          "Timestamp": 1717596980612
+        },
+        {
+          "RequestId": "5cc2f3d1-faed-4697-b442-d59433747388",
+          "Version": "1.1",
+          "EventID": "RemoteOperationResponse",
+          "Data": {
+            "roRequestId": "2c405070-2346-11ef-bb8a-47557f0b3b3c",
+            "response": "SUCCESS"
+          },
+          "Timestamp": 1717596980667
+        }
+      ],
+      "roNotificationList": [],
+      "deviceMessageFailures": [],
+      "roEvent": {
+        "RequestId": "2c405070-2346-11ef-bb8a-47557f0b3b3c",
+        "Version": "1.1",
+        "EventID": "RemoteOperationAlarm",
+        "Data": {
+          "duration": 60,
+          "roRequestId": "2c405070-2346-11ef-bb8a-47557f0b3b3c",
+          "vehicleArchType": "hu",
+          "state": "OFF"
+        },
+        "Timestamp": 1717596976899
+      }
+    },
+    {
+      "roStatus": "TTL_EXPIRED",
+      "roResponseList": [
+        {
+          "RequestId": "d2f58db5-b966-44b3-b2bb-1b90cc4024b7",
+          "Version": "1.1",
+          "EventID": "RemoteOperationResponse",
+          "Data": {
+            "roRequestId": "ad5b4ab0-23ec-11ef-a8f7-1bd184e29a25",
+            "response": "SUCCESS_CONTINUE"
+          },
+          "Timestamp": 1717668493607
+        }
+      ],
+      "roNotificationList": [],
+      "deviceMessageFailures": [],
+      "roEvent": {
+        "RequestId": "ad5b4ab0-23ec-11ef-a8f7-1bd184e29a25",
+        "Version": "1.1",
+        "EventID": "RemoteOperationTrunk",
+        "Data": {
+          "roRequestId": "ad5b4ab0-23ec-11ef-a8f7-1bd184e29a25",
+          "vehicleArchType": "hu",
+          "state": "UNLOCKED"
+        },
+        "Timestamp": 1717668489959
+      }
+    },
+    {
+      "roStatus": "PROCESSED_SUCCESS",
+      "roResponseList": [
+        {
+          "RequestId": "1874b8d8-2144-4230-9efc-9983ace0bf40",
+          "Version": "1.1",
+          "EventID": "RemoteOperationResponse",
+          "Data": {
+            "roRequestId": "772fe3e0-23fd-11ef-ac92-b963b7b2cf89",
+            "response": "SUCCESS_CONTINUE"
+          },
+          "Timestamp": 1717675703773
+        },
+        {
+          "RequestId": "97f8f412-fdfa-4e6a-b2f9-0c897fa15fcd",
+          "Version": "1.1",
+          "EventID": "RemoteOperationResponse",
+          "Data": {
+            "roRequestId": "772fe3e0-23fd-11ef-ac92-b963b7b2cf89",
+            "response": "SUCCESS"
+          },
+          "Timestamp": 1717675703832
+        }
+      ],
+      "roNotificationList": [],
+      "deviceMessageFailures": [],
+      "roEvent": {
+        "RequestId": "772fe3e0-23fd-11ef-ac92-b963b7b2cf89",
+        "Version": "1.1",
+        "EventID": "RemoteOperationAlarm",
+        "Data": {
+          "duration": 60,
+          "roRequestId": "772fe3e0-23fd-11ef-ac92-b963b7b2cf89",
+          "vehicleArchType": "hu",
+          "state": "ON"
+        },
+        "Timestamp": 1717675700525
+      }
+    },
+    {
+      "roStatus": "PROCESSED_FAILED",
+      "roResponseList": [],
+      "roNotificationList": [],
+      "deviceMessageFailures": [
+        {
+          "RequestId": "366dd080-241e-11ef-ac92-b963b7b2cf89",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_STATUS_INACTIVE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "366dd080-241e-11ef-ac92-b963b7b2cf89",
+              "Version": "1.1",
+              "EventID": "RemoteOperationDoors",
+              "Data": {
+                "roRequestId": "366dd080-241e-11ef-ac92-b963b7b2cf89",
+                "vehicleArchType": "hu",
+                "state": "LOCKED"
+              },
+              "Timestamp": 1717689765271
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 0,
+            "deviceStatusInactive": true
+          },
+          "Timestamp": 1717689765384
+        },
+        {
+          "RequestId": "366dd080-241e-11ef-ac92-b963b7b2cf89",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_DELIVERY_CUTOFF_EXCEEDED",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "366dd080-241e-11ef-ac92-b963b7b2cf89",
+              "Version": "1.1",
+              "EventID": "RemoteOperationDoors",
+              "Data": {
+                "roRequestId": "366dd080-241e-11ef-ac92-b963b7b2cf89",
+                "vehicleArchType": "hu",
+                "state": "LOCKED"
+              },
+              "Timestamp": 1717689765271
+            },
+            "deviceDeliveryCutoffExceeded": true,
+            "retryAttempts": 0,
+            "deviceStatusInactive": false
+          },
+          "Timestamp": 1717692593803
+        }
+      ],
+      "roEvent": {
+        "RequestId": "366dd080-241e-11ef-ac92-b963b7b2cf89",
+        "Version": "1.1",
+        "EventID": "RemoteOperationDoors",
+        "Data": {
+          "roRequestId": "366dd080-241e-11ef-ac92-b963b7b2cf89",
+          "vehicleArchType": "hu",
+          "state": "LOCKED"
+        },
+        "Timestamp": 1717689765271
+      }
+    },
+    {
+      "roStatus": "TTL_EXPIRED",
+      "roResponseList": [],
+      "roNotificationList": [],
+      "deviceMessageFailures": [
+        {
+          "RequestId": "843d3190-2665-11ef-8a49-5daf935bf48b",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_STATUS_INACTIVE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "843d3190-2665-11ef-8a49-5daf935bf48b",
+              "Version": "1.1",
+              "EventID": "RemoteOperationTrunk",
+              "Data": {
+                "roRequestId": "843d3190-2665-11ef-8a49-5daf935bf48b",
+                "vehicleArchType": "hu",
+                "state": "UNLOCKED"
+              },
+              "Timestamp": 1717940292410
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 0,
+            "deviceStatusInactive": true
+          },
+          "Timestamp": 1717940292563
+        }
+      ],
+      "roEvent": {
+        "RequestId": "843d3190-2665-11ef-8a49-5daf935bf48b",
+        "Version": "1.1",
+        "EventID": "RemoteOperationTrunk",
+        "Data": {
+          "roRequestId": "843d3190-2665-11ef-8a49-5daf935bf48b",
+          "vehicleArchType": "hu",
+          "state": "UNLOCKED"
+        },
+        "Timestamp": 1717940292410
+      }
+    },
+    {
+      "roStatus": "TTL_EXPIRED",
+      "roResponseList": [],
+      "roNotificationList": [],
+      "deviceMessageFailures": [
+        {
+          "RequestId": "f7d8aee0-2665-11ef-8a49-5daf935bf48b",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_STATUS_INACTIVE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "f7d8aee0-2665-11ef-8a49-5daf935bf48b",
+              "Version": "1.1",
+              "EventID": "RemoteOperationAlarm",
+              "Data": {
+                "duration": 60,
+                "roRequestId": "f7d8aee0-2665-11ef-8a49-5daf935bf48b",
+                "vehicleArchType": "hu",
+                "state": "ON"
+              },
+              "Timestamp": 1717940486365
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 0,
+            "deviceStatusInactive": true
+          },
+          "Timestamp": 1717940486490
+        }
+      ],
+      "roEvent": {
+        "RequestId": "f7d8aee0-2665-11ef-8a49-5daf935bf48b",
+        "Version": "1.1",
+        "EventID": "RemoteOperationAlarm",
+        "Data": {
+          "duration": 60,
+          "roRequestId": "f7d8aee0-2665-11ef-8a49-5daf935bf48b",
+          "vehicleArchType": "hu",
+          "state": "ON"
+        },
+        "Timestamp": 1717940486365
+      }
+    },
+    {
+      "roStatus": "TTL_EXPIRED",
+      "roResponseList": [],
+      "roNotificationList": [],
+      "deviceMessageFailures": [
+        {
+          "RequestId": "268407e0-2679-11ef-9788-5bb1fc58df97",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_STATUS_INACTIVE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "268407e0-2679-11ef-9788-5bb1fc58df97",
+              "Version": "1.1",
+              "EventID": "RemoteOperationLights",
+              "Data": {
+                "duration": 8,
+                "roRequestId": "268407e0-2679-11ef-9788-5bb1fc58df97",
+                "vehicleArchType": "hu",
+                "state": "OFF"
+              },
+              "Timestamp": 1717948725106
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 0,
+            "deviceStatusInactive": true
+          },
+          "Timestamp": 1717948725236
+        }
+      ],
+      "roEvent": {
+        "RequestId": "268407e0-2679-11ef-9788-5bb1fc58df97",
+        "Version": "1.1",
+        "EventID": "RemoteOperationLights",
+        "Data": {
+          "duration": 8,
+          "roRequestId": "268407e0-2679-11ef-9788-5bb1fc58df97",
+          "vehicleArchType": "hu",
+          "state": "OFF"
+        },
+        "Timestamp": 1717948725106
+      }
+    },
+    {
+      "roStatus": "PENDING",
+      "roResponseList": [],
+      "roNotificationList": [],
+      "deviceMessageFailures": [
+        {
+          "RequestId": "cd53dee0-27e3-11ef-a8f7-1bd184e29a25",
+          "Version": "1.0",
+          "EventID": "DeviceMessageFailure",
+          "Data": {
+            "errorCode": "DEVICE_STATUS_INACTIVE",
+            "shoudlerTapRetryAttempts": 0,
+            "failedIgniteEvent": {
+              "RequestId": "cd53dee0-27e3-11ef-a8f7-1bd184e29a25",
+              "Version": "1.1",
+              "EventID": "RemoteOperationWindows",
+              "Data": {
+                "duration": 8,
+                "roRequestId": "cd53dee0-27e3-11ef-a8f7-1bd184e29a25",
+                "vehicleArchType": "hu",
+                "state": "CLOSED",
+                "percent": 60
+              },
+              "Timestamp": 1718104482776
+            },
+            "deviceDeliveryCutoffExceeded": false,
+            "retryAttempts": 0,
+            "deviceStatusInactive": true
+          },
+          "Timestamp": 1718104482922
+        }
+      ],
+      "roEvent": {
+        "RequestId": "cd53dee0-27e3-11ef-a8f7-1bd184e29a25",
+        "Version": "1.1",
+        "EventID": "RemoteOperationWindows",
+        "Data": {
+          "duration": 8,
+          "roRequestId": "cd53dee0-27e3-11ef-a8f7-1bd184e29a25",
+          "vehicleArchType": "hu",
+          "state": "CLOSED",
+          "percent": 60
+        },
+        "Timestamp": 1718104482776
+      }
+    }
+]

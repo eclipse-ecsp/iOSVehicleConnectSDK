@@ -1,0 +1,17 @@
+[
+    {
+        "group": "RemoteOperations",
+        "enabled": "true",
+        "channels": [
+            {
+                "type": "push",
+              "enabled": "true",
+               "service": "apns",
+                "appPlatform": "iOS",
+                "deviceTokens": [
+                    "euJmAfbHd0K5lmxi62xJE9:APA91bGZhfR90PlJO3qK09wkA22QohPEJVl8Pm6l30Hyn8T7K9j_Scsh5s81yPAcbRVHtbee3FBy8DlSPQkPdKLpr6iAysyYTqxK2A2iv1lGOydS4ePMDwXv62qYUJ__ePjeHDV9Y8CA"
+                ]
+            }
+        ]
+    }
+]

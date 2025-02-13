@@ -1,0 +1,1325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		050EA6D7635565B7FCF91F44 /* Pods_VehicleConnectSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9526189DBB51CDCE6B9351D3 /* Pods_VehicleConnectSDK.framework */; };
+		17BAEA2806DCAE7421C1A115 /* Pods_VehicleConnectSDK_VehicleConnectSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A7F8B4DEDE18FC646A1C54 /* Pods_VehicleConnectSDK_VehicleConnectSDKTests.framework */; };
+		500434982BC2CAD6008D7DC2 /* EnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500434972BC2CAD6008D7DC2 /* EnvironmentTests.swift */; };
+		5004349A2BC2CB29008D7DC2 /* UserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500434992BC2CB29008D7DC2 /* UserServiceTests.swift */; };
+		5004349C2BC2CB56008D7DC2 /* VehicleServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004349B2BC2CB56008D7DC2 /* VehicleServiceTests.swift */; };
+		500434A02BC2CB7D008D7DC2 /* ROServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5004349F2BC2CB7D008D7DC2 /* ROServiceTests.swift */; };
+		500ABBA42B9ADF0E00B0FE9E /* RemoteOperationHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500ABBA32B9ADF0E00B0FE9E /* RemoteOperationHistoryRequest.swift */; };
+		500ABBA62B9B0EEF00B0FE9E /* RemoteOperationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500ABBA52B9B0EEF00B0FE9E /* RemoteOperationRepository.swift */; };
+		500ABBA82B9B0F0300B0FE9E /* RemoteOperationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500ABBA72B9B0F0300B0FE9E /* RemoteOperationService.swift */; };
+		5010E0972B99E161004724AD /* RemoteOperationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5010E0962B99E161004724AD /* RemoteOperationEndpoint.swift */; };
+		502700F82B9F0A3E00C06221 /* RemoteEventHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502700F72B9F0A3E00C06221 /* RemoteEventHistory.swift */; };
+		50282C652BF4DCC20077F7DB /* ValidateImeiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50282C642BF4DCC20077F7DB /* ValidateImeiRequest.swift */; };
+		50282C672BF4E46D0077F7DB /* VehicleProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50282C662BF4E46D0077F7DB /* VehicleProfileRequest.swift */; };
+		50312BCC2BD14AC400F0E991 /* VehicleConnectSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505390C92B721F9B003CB731 /* VehicleConnectSDK.framework */; };
+		50378E982C2B484F00125D85 /* vehicleAssociationsList.json in Resources */ = {isa = PBXBuildFile; fileRef = 50378E972C2B484F00125D85 /* vehicleAssociationsList.json */; };
+		50378E9A2C2B48B100125D85 /* vehicleProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = 50378E992C2B48B100125D85 /* vehicleProfile.json */; };
+		50378E9D2C2B51CF00125D85 /* alertsHistory.json in Resources */ = {isa = PBXBuildFile; fileRef = 50378E9B2C2B51CF00125D85 /* alertsHistory.json */; };
+		50378E9E2C2B51CF00125D85 /* shareDeviceToken.json in Resources */ = {isa = PBXBuildFile; fileRef = 50378E9C2C2B51CF00125D85 /* shareDeviceToken.json */; };
+		5041C3002C2BE873002690E9 /* validateImei.json in Resources */ = {isa = PBXBuildFile; fileRef = 5041C2FF2C2BE872002690E9 /* validateImei.json */; };
+		5041C3032C2BEF66002690E9 /* terminareDevice.json in Resources */ = {isa = PBXBuildFile; fileRef = 5041C3012C2BEF66002690E9 /* terminareDevice.json */; };
+		5041C3042C2BEF66002690E9 /* associateDevice.json in Resources */ = {isa = PBXBuildFile; fileRef = 5041C3022C2BEF66002690E9 /* associateDevice.json */; };
+		5041C3062C2BF2D5002690E9 /* updateProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = 5041C3052C2BF2D5002690E9 /* updateProfile.json */; };
+		5041C3082C2C415C002690E9 /* VehicleRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5041C3072C2C415C002690E9 /* VehicleRepositoryTests.swift */; };
+		5047E01B2C4633BA0033CC95 /* SecureStoreManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047E01A2C4633BA0033CC95 /* SecureStoreManagerTests.swift */; };
+		5047E02E2C46412D0033CC95 /* SdkUnitTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047E02D2C46412D0033CC95 /* SdkUnitTestAppApp.swift */; };
+		5047E0302C46412D0033CC95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047E02F2C46412D0033CC95 /* ContentView.swift */; };
+		5047E0322C4641300033CC95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5047E0312C4641300033CC95 /* Assets.xcassets */; };
+		5047E0352C4641300033CC95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5047E0342C4641300033CC95 /* Preview Assets.xcassets */; };
+		505390CE2B721F9B003CB731 /* VehicleConnectSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 505390CD2B721F9B003CB731 /* VehicleConnectSDK.docc */; };
+		505390D92B721F9B003CB731 /* VehicleConnectSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505390D82B721F9B003CB731 /* VehicleConnectSDKTests.swift */; };
+		505390DA2B721F9B003CB731 /* VehicleConnectSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 505390CC2B721F9B003CB731 /* VehicleConnectSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		505ACA4B2BBA954600042F33 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505ACA4A2BBA954600042F33 /* UserProfile.swift */; };
+		505ACA4D2BBA963E00042F33 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505ACA4C2BBA963E00042F33 /* Response.swift */; };
+		505ACA542BBA9BE900042F33 /* VehicleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505ACA532BBA9BE900042F33 /* VehicleEndpoint.swift */; };
+		505ACA562BBA9C3800042F33 /* VehicleProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505ACA552BBA9C3800042F33 /* VehicleProfile.swift */; };
+		505ACA582BBA9DA400042F33 /* VehicleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505ACA572BBA9DA400042F33 /* VehicleRepository.swift */; };
+		505ACA5A2BBA9DE400042F33 /* VehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505ACA592BBA9DE400042F33 /* VehicleService.swift */; };
+		5065F3C32B8DD045005F6AD4 /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5065F3C22B8DD045005F6AD4 /* Vehicles.swift */; };
+		5065F3C72B8E10E1005F6AD4 /* DeviceAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5065F3C62B8E10E1005F6AD4 /* DeviceAssociation.swift */; };
+		5065F3CB2B8E4192005F6AD4 /* DeviceTermination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5065F3CA2B8E4192005F6AD4 /* DeviceTermination.swift */; };
+		506764222BE38A76002FAFE8 /* UpdateVehicleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506764212BE38A76002FAFE8 /* UpdateVehicleResponse.swift */; };
+		506764242BE40AFC002FAFE8 /* NotificationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506764232BE40AFC002FAFE8 /* NotificationServiceTests.swift */; };
+		507A624F2BC65CB800D98983 /* NotificationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A624E2BC65CB800D98983 /* NotificationEndpoint.swift */; };
+		507A62542BC65E8000D98983 /* NotificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A62532BC65E8000D98983 /* NotificationRequest.swift */; };
+		507A62582BC66E7900D98983 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A62572BC66E7900D98983 /* NotificationService.swift */; };
+		507A625A2BC66ED600D98983 /* NotificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A62592BC66ED600D98983 /* NotificationRepository.swift */; };
+		507A625C2BC6AD0700D98983 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507A625B2BC6AD0700D98983 /* NotificationModel.swift */; };
+		50813FA32C22D6D300E7F465 /* roEventStatus.json in Resources */ = {isa = PBXBuildFile; fileRef = 50813FA22C22D6D300E7F465 /* roEventStatus.json */; };
+		50813FA62C22DB3000E7F465 /* roHistory.json in Resources */ = {isa = PBXBuildFile; fileRef = 50813FA52C22DB3000E7F465 /* roHistory.json */; };
+		50813FA82C22F4D500E7F465 /* environment.json in Resources */ = {isa = PBXBuildFile; fileRef = 50813FA72C22F4D500E7F465 /* environment.json */; };
+		508C56BF2C2C9E66003ECCF0 /* NotificationRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508C56BE2C2C9E65003ECCF0 /* NotificationRepositoryTests.swift */; };
+		509A8A392BE8C17800650884 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A8A382BE8C17800650884 /* ErrorResponse.swift */; };
+		50AFA17F2BFDF9DD00BD93C8 /* RemoteEventStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AFA17E2BFDF9DD00BD93C8 /* RemoteEventStatusRequest.swift */; };
+		50AFA1812BFE001400BD93C8 /* RemoteEventUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AFA1802BFE001400BD93C8 /* RemoteEventUpdateRequest.swift */; };
+		50AFA1832BFE01AD00BD93C8 /* RemoteEventRequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AFA1822BFE01AD00BD93C8 /* RemoteEventRequestStatus.swift */; };
+		50CB2B1B2C2943A800289264 /* roEventUpdate.json in Resources */ = {isa = PBXBuildFile; fileRef = 50CB2B1A2C2943A800289264 /* roEventUpdate.json */; };
+		50CB2B1D2C29595C00289264 /* RORepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB2B1C2C29595C00289264 /* RORepositoryTests.swift */; };
+		50CB2B1F2C29730100289264 /* DataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB2B1E2C29730100289264 /* DataMock.swift */; };
+		50CB2C8F2C2CF4D80070ACE7 /* userProfile.json in Resources */ = {isa = PBXBuildFile; fileRef = 50CB2C8E2C2CF4D70070ACE7 /* userProfile.json */; };
+		50CB2C912C2D009B0070ACE7 /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CB2C902C2D009B0070ACE7 /* UserRepositoryTests.swift */; };
+		50D3B7F42BFF254300C6A724 /* AssociateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D3B7F32BFF254300C6A724 /* AssociateRequest.swift */; };
+		50D3B7F62BFF255700C6A724 /* TerminateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D3B7F52BFF255700C6A724 /* TerminateRequest.swift */; };
+		50D9C2112C538A5000ABCE6E /* Pods_VehicleConnectSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9526189DBB51CDCE6B9351D3 /* Pods_VehicleConnectSDK.framework */; };
+		50E0DB552BE0BE6800D1169E /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0DB542BE0BE6800D1169E /* Encodable.swift */; };
+		50E0DB6A2BE2235C00D1169E /* DeviceTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0DB692BE2235C00D1169E /* DeviceTokenRequest.swift */; };
+		50E0DB6E2BE238C700D1169E /* UpdateProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0DB6D2BE238C700D1169E /* UpdateProfileRequest.swift */; };
+		50F4BF3B2B7B4B4400B5AFDE /* EnvironmentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF152B7B4B4300B5AFDE /* EnvironmentDetail.swift */; };
+		50F4BF3E2B7B4B4400B5AFDE /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF192B7B4B4300B5AFDE /* AppManager.swift */; };
+		50F4BF3F2B7B4B4400B5AFDE /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF1B2B7B4B4400B5AFDE /* HTTPClient.swift */; };
+		50F4BF402B7B4B4400B5AFDE /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF1C2B7B4B4400B5AFDE /* RequestMethod.swift */; };
+		50F4BF412B7B4B4400B5AFDE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF1D2B7B4B4400B5AFDE /* NetworkError.swift */; };
+		50F4BF422B7B4B4400B5AFDE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF1E2B7B4B4400B5AFDE /* Endpoint.swift */; };
+		50F4BF432B7B4B4400B5AFDE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF202B7B4B4400B5AFDE /* String.swift */; };
+		50F4BF442B7B4B4400B5AFDE /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF212B7B4B4400B5AFDE /* UIApplication.swift */; };
+		50F4BF452B7B4B4400B5AFDE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF232B7B4B4400B5AFDE /* Constant.swift */; };
+		50F4BF462B7B4B4400B5AFDE /* SecureStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF242B7B4B4400B5AFDE /* SecureStoreManager.swift */; };
+		50F4BF472B7B4B4400B5AFDE /* DebugPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF252B7B4B4400B5AFDE /* DebugPrint.swift */; };
+		50F4BF482B7B4B4400B5AFDE /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF262B7B4B4400B5AFDE /* CustomError.swift */; };
+		50F4BF492B7B4B4400B5AFDE /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF272B7B4B4400B5AFDE /* Helper.swift */; };
+		50F4BF4A2B7B4B4400B5AFDE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF292B7B4B4400B5AFDE /* NetworkManager.swift */; };
+		50F4BF4B2B7B4B4400B5AFDE /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF312B7B4B4400B5AFDE /* UserRepository.swift */; };
+		50F4BF4C2B7B4B4400B5AFDE /* UserEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF332B7B4B4400B5AFDE /* UserEndpoint.swift */; };
+		50F4BF4D2B7B4B4400B5AFDE /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF352B7B4B4400B5AFDE /* UserService.swift */; };
+		50F4BF4E2B7B4B4400B5AFDE /* AppAuthInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF372B7B4B4400B5AFDE /* AppAuthInjection.swift */; };
+		50F4BF4F2B7B4B4500B5AFDE /* AppAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF382B7B4B4400B5AFDE /* AppAuthProvider.swift */; };
+		50F4BF502B7B4B4500B5AFDE /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF392B7B4B4400B5AFDE /* AuthProtocol.swift */; };
+		50F4BF512B7B4B4500B5AFDE /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4BF3A2B7B4B4400B5AFDE /* AuthManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5047E0392C4641430033CC95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 505390C02B721F9B003CB731 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5047E02A2C46412D0033CC95;
+			remoteInfo = SdkUnitTestApp;
+		};
+		505390D52B721F9B003CB731 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 505390C02B721F9B003CB731 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 505390C82B721F9B003CB731;
+			remoteInfo = VehicleConnectSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A00F0C13FEAA5BBEC98E577 /* Pods-VehicleConnectSDK-VehicleConnectSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VehicleConnectSDK-VehicleConnectSDKTests.debug.xcconfig"; path = "Target Support Files/Pods-VehicleConnectSDK-VehicleConnectSDKTests/Pods-VehicleConnectSDK-VehicleConnectSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2765A6B405E524B0D560FFFE /* Pods-VehicleConnectSDK-VehicleConnectSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VehicleConnectSDK-VehicleConnectSDKTests.release.xcconfig"; path = "Target Support Files/Pods-VehicleConnectSDK-VehicleConnectSDKTests/Pods-VehicleConnectSDK-VehicleConnectSDKTests.release.xcconfig"; sourceTree = "<group>"; };
+		500434972BC2CAD6008D7DC2 /* EnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
+		500434992BC2CB29008D7DC2 /* UserServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceTests.swift; sourceTree = "<group>"; };
+		5004349B2BC2CB56008D7DC2 /* VehicleServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleServiceTests.swift; sourceTree = "<group>"; };
+		5004349F2BC2CB7D008D7DC2 /* ROServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROServiceTests.swift; sourceTree = "<group>"; };
+		500ABBA32B9ADF0E00B0FE9E /* RemoteOperationHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteOperationHistoryRequest.swift; sourceTree = "<group>"; };
+		500ABBA52B9B0EEF00B0FE9E /* RemoteOperationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteOperationRepository.swift; sourceTree = "<group>"; };
+		500ABBA72B9B0F0300B0FE9E /* RemoteOperationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteOperationService.swift; sourceTree = "<group>"; };
+		5010E0962B99E161004724AD /* RemoteOperationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteOperationEndpoint.swift; sourceTree = "<group>"; };
+		502700F72B9F0A3E00C06221 /* RemoteEventHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteEventHistory.swift; sourceTree = "<group>"; };
+		50282C642BF4DCC20077F7DB /* ValidateImeiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateImeiRequest.swift; sourceTree = "<group>"; };
+		50282C662BF4E46D0077F7DB /* VehicleProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfileRequest.swift; sourceTree = "<group>"; };
+		50378E972C2B484F00125D85 /* vehicleAssociationsList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vehicleAssociationsList.json; sourceTree = "<group>"; };
+		50378E992C2B48B100125D85 /* vehicleProfile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vehicleProfile.json; sourceTree = "<group>"; };
+		50378E9B2C2B51CF00125D85 /* alertsHistory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = alertsHistory.json; sourceTree = "<group>"; };
+		50378E9C2C2B51CF00125D85 /* shareDeviceToken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shareDeviceToken.json; sourceTree = "<group>"; };
+		5041C2FF2C2BE872002690E9 /* validateImei.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = validateImei.json; sourceTree = "<group>"; };
+		5041C3012C2BEF66002690E9 /* terminareDevice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = terminareDevice.json; sourceTree = "<group>"; };
+		5041C3022C2BEF66002690E9 /* associateDevice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = associateDevice.json; sourceTree = "<group>"; };
+		5041C3052C2BF2D5002690E9 /* updateProfile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = updateProfile.json; sourceTree = "<group>"; };
+		5041C3072C2C415C002690E9 /* VehicleRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRepositoryTests.swift; sourceTree = "<group>"; };
+		5047E01A2C4633BA0033CC95 /* SecureStoreManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreManagerTests.swift; sourceTree = "<group>"; };
+		5047E02B2C46412D0033CC95 /* SdkUnitTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SdkUnitTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5047E02D2C46412D0033CC95 /* SdkUnitTestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SdkUnitTestAppApp.swift; sourceTree = "<group>"; };
+		5047E02F2C46412D0033CC95 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5047E0312C4641300033CC95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5047E0342C4641300033CC95 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		505390C92B721F9B003CB731 /* VehicleConnectSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VehicleConnectSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		505390CC2B721F9B003CB731 /* VehicleConnectSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VehicleConnectSDK.h; sourceTree = "<group>"; };
+		505390CD2B721F9B003CB731 /* VehicleConnectSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = VehicleConnectSDK.docc; sourceTree = "<group>"; };
+		505390D32B721F9B003CB731 /* VehicleConnectSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleConnectSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		505390D82B721F9B003CB731 /* VehicleConnectSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleConnectSDKTests.swift; sourceTree = "<group>"; };
+		505390EB2B723282003CB731 /* VehicleConnectSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = VehicleConnectSDK.docc; sourceTree = "<group>"; };
+		505ACA4A2BBA954600042F33 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		505ACA4C2BBA963E00042F33 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		505ACA532BBA9BE900042F33 /* VehicleEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleEndpoint.swift; sourceTree = "<group>"; };
+		505ACA552BBA9C3800042F33 /* VehicleProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleProfile.swift; sourceTree = "<group>"; };
+		505ACA572BBA9DA400042F33 /* VehicleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRepository.swift; sourceTree = "<group>"; };
+		505ACA592BBA9DE400042F33 /* VehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleService.swift; sourceTree = "<group>"; };
+		5065F3C22B8DD045005F6AD4 /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
+		5065F3C62B8E10E1005F6AD4 /* DeviceAssociation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAssociation.swift; sourceTree = "<group>"; };
+		5065F3CA2B8E4192005F6AD4 /* DeviceTermination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTermination.swift; sourceTree = "<group>"; };
+		506764212BE38A76002FAFE8 /* UpdateVehicleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVehicleResponse.swift; sourceTree = "<group>"; };
+		506764232BE40AFC002FAFE8 /* NotificationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceTests.swift; sourceTree = "<group>"; };
+		507A624E2BC65CB800D98983 /* NotificationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEndpoint.swift; sourceTree = "<group>"; };
+		507A62532BC65E8000D98983 /* NotificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRequest.swift; sourceTree = "<group>"; };
+		507A62572BC66E7900D98983 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		507A62592BC66ED600D98983 /* NotificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRepository.swift; sourceTree = "<group>"; };
+		507A625B2BC6AD0700D98983 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		50813FA22C22D6D300E7F465 /* roEventStatus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = roEventStatus.json; sourceTree = "<group>"; };
+		50813FA52C22DB3000E7F465 /* roHistory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = roHistory.json; sourceTree = "<group>"; };
+		50813FA72C22F4D500E7F465 /* environment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = environment.json; sourceTree = "<group>"; };
+		508C56BE2C2C9E65003ECCF0 /* NotificationRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRepositoryTests.swift; sourceTree = "<group>"; };
+		509A8A382BE8C17800650884 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		50AFA17E2BFDF9DD00BD93C8 /* RemoteEventStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteEventStatusRequest.swift; sourceTree = "<group>"; };
+		50AFA1802BFE001400BD93C8 /* RemoteEventUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteEventUpdateRequest.swift; sourceTree = "<group>"; };
+		50AFA1822BFE01AD00BD93C8 /* RemoteEventRequestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteEventRequestStatus.swift; sourceTree = "<group>"; };
+		50CB2B1A2C2943A800289264 /* roEventUpdate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = roEventUpdate.json; sourceTree = "<group>"; };
+		50CB2B1C2C29595C00289264 /* RORepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RORepositoryTests.swift; sourceTree = "<group>"; };
+		50CB2B1E2C29730100289264 /* DataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMock.swift; sourceTree = "<group>"; };
+		50CB2C8E2C2CF4D70070ACE7 /* userProfile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = userProfile.json; sourceTree = "<group>"; };
+		50CB2C902C2D009B0070ACE7 /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
+		50D3B7F32BFF254300C6A724 /* AssociateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssociateRequest.swift; sourceTree = "<group>"; };
+		50D3B7F52BFF255700C6A724 /* TerminateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminateRequest.swift; sourceTree = "<group>"; };
+		50E0DB542BE0BE6800D1169E /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		50E0DB692BE2235C00D1169E /* DeviceTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTokenRequest.swift; sourceTree = "<group>"; };
+		50E0DB6D2BE238C700D1169E /* UpdateProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileRequest.swift; sourceTree = "<group>"; };
+		50F4BF152B7B4B4300B5AFDE /* EnvironmentDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentDetail.swift; sourceTree = "<group>"; };
+		50F4BF192B7B4B4300B5AFDE /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		50F4BF1B2B7B4B4400B5AFDE /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		50F4BF1C2B7B4B4400B5AFDE /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		50F4BF1D2B7B4B4400B5AFDE /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		50F4BF1E2B7B4B4400B5AFDE /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		50F4BF202B7B4B4400B5AFDE /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		50F4BF212B7B4B4400B5AFDE /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		50F4BF232B7B4B4400B5AFDE /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		50F4BF242B7B4B4400B5AFDE /* SecureStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStoreManager.swift; sourceTree = "<group>"; };
+		50F4BF252B7B4B4400B5AFDE /* DebugPrint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugPrint.swift; sourceTree = "<group>"; };
+		50F4BF262B7B4B4400B5AFDE /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		50F4BF272B7B4B4400B5AFDE /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		50F4BF292B7B4B4400B5AFDE /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		50F4BF312B7B4B4400B5AFDE /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		50F4BF332B7B4B4400B5AFDE /* UserEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEndpoint.swift; sourceTree = "<group>"; };
+		50F4BF352B7B4B4400B5AFDE /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		50F4BF372B7B4B4400B5AFDE /* AppAuthInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAuthInjection.swift; sourceTree = "<group>"; };
+		50F4BF382B7B4B4400B5AFDE /* AppAuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAuthProvider.swift; sourceTree = "<group>"; };
+		50F4BF392B7B4B4400B5AFDE /* AuthProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
+		50F4BF3A2B7B4B4400B5AFDE /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		94A7F8B4DEDE18FC646A1C54 /* Pods_VehicleConnectSDK_VehicleConnectSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VehicleConnectSDK_VehicleConnectSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9526189DBB51CDCE6B9351D3 /* Pods_VehicleConnectSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VehicleConnectSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA4C58F407892C1D5E85428A /* Pods-VehicleConnectSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VehicleConnectSDK.debug.xcconfig"; path = "Target Support Files/Pods-VehicleConnectSDK/Pods-VehicleConnectSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		D3EF8FEC52C7C08EB0B2619D /* Pods-VehicleConnectSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VehicleConnectSDK.release.xcconfig"; path = "Target Support Files/Pods-VehicleConnectSDK/Pods-VehicleConnectSDK.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5047E0282C46412D0033CC95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		505390C62B721F9B003CB731 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50D9C2112C538A5000ABCE6E /* Pods_VehicleConnectSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		505390D02B721F9B003CB731 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50312BCC2BD14AC400F0E991 /* VehicleConnectSDK.framework in Frameworks */,
+				17BAEA2806DCAE7421C1A115 /* Pods_VehicleConnectSDK_VehicleConnectSDKTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		500ABBA22B9ADEA800B0FE9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				500ABBA32B9ADF0E00B0FE9E /* RemoteOperationHistoryRequest.swift */,
+				502700F72B9F0A3E00C06221 /* RemoteEventHistory.swift */,
+				50AFA17E2BFDF9DD00BD93C8 /* RemoteEventStatusRequest.swift */,
+				50AFA1802BFE001400BD93C8 /* RemoteEventUpdateRequest.swift */,
+				50AFA1822BFE01AD00BD93C8 /* RemoteEventRequestStatus.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5047E02C2C46412D0033CC95 /* SdkUnitTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				5047E02D2C46412D0033CC95 /* SdkUnitTestAppApp.swift */,
+				5047E02F2C46412D0033CC95 /* ContentView.swift */,
+				5047E0312C4641300033CC95 /* Assets.xcassets */,
+				5047E0332C4641300033CC95 /* Preview Content */,
+			);
+			path = SdkUnitTestApp;
+			sourceTree = "<group>";
+		};
+		5047E0332C4641300033CC95 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5047E0342C4641300033CC95 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		505390BF2B721F9B003CB731 = {
+			isa = PBXGroup;
+			children = (
+				505390CB2B721F9B003CB731 /* VehicleConnectSDK */,
+				505390D72B721F9B003CB731 /* VehicleConnectSDKTests */,
+				5047E02C2C46412D0033CC95 /* SdkUnitTestApp */,
+				505390CA2B721F9B003CB731 /* Products */,
+				DA9AE8783E2135376AE03816 /* Pods */,
+				751A858B2974B5026AC39CED /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		505390CA2B721F9B003CB731 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				505390C92B721F9B003CB731 /* VehicleConnectSDK.framework */,
+				505390D32B721F9B003CB731 /* VehicleConnectSDKTests.xctest */,
+				5047E02B2C46412D0033CC95 /* SdkUnitTestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		505390CB2B721F9B003CB731 /* VehicleConnectSDK */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF282B7B4B4400B5AFDE /* NetworkManager */,
+				50F4BF1A2B7B4B4400B5AFDE /* Network */,
+				50F4BF222B7B4B4400B5AFDE /* Helper */,
+				50F4BF1F2B7B4B4400B5AFDE /* Extension */,
+				50F4BF362B7B4B4400B5AFDE /* AppAuth */,
+				50F4BF142B7B4B4300B5AFDE /* Environment */,
+				50F4BF182B7B4B4300B5AFDE /* AppManager */,
+				50F4BF2A2B7B4B4400B5AFDE /* Services */,
+				505390EB2B723282003CB731 /* VehicleConnectSDK.docc */,
+				505390CC2B721F9B003CB731 /* VehicleConnectSDK.h */,
+				505390CD2B721F9B003CB731 /* VehicleConnectSDK.docc */,
+			);
+			path = VehicleConnectSDK;
+			sourceTree = "<group>";
+		};
+		505390D72B721F9B003CB731 /* VehicleConnectSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				5047E01A2C4633BA0033CC95 /* SecureStoreManagerTests.swift */,
+				50813FA42C22DA7500E7F465 /* Json */,
+				505390D82B721F9B003CB731 /* VehicleConnectSDKTests.swift */,
+				500434972BC2CAD6008D7DC2 /* EnvironmentTests.swift */,
+				500434992BC2CB29008D7DC2 /* UserServiceTests.swift */,
+				5004349B2BC2CB56008D7DC2 /* VehicleServiceTests.swift */,
+				5004349F2BC2CB7D008D7DC2 /* ROServiceTests.swift */,
+				506764232BE40AFC002FAFE8 /* NotificationServiceTests.swift */,
+				50CB2B1C2C29595C00289264 /* RORepositoryTests.swift */,
+				5041C3072C2C415C002690E9 /* VehicleRepositoryTests.swift */,
+				508C56BE2C2C9E65003ECCF0 /* NotificationRepositoryTests.swift */,
+				50CB2C902C2D009B0070ACE7 /* UserRepositoryTests.swift */,
+				50CB2B1E2C29730100289264 /* DataMock.swift */,
+			);
+			path = VehicleConnectSDKTests;
+			sourceTree = "<group>";
+		};
+		505ACA492BBA952C00042F33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				505ACA4A2BBA954600042F33 /* UserProfile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		505ACA4E2BBA9A3D00042F33 /* VehicleService */ = {
+			isa = PBXGroup;
+			children = (
+				505ACA512BBA9A9400042F33 /* Endpoint */,
+				505ACA4F2BBA9A7800042F33 /* Model */,
+				505ACA522BBA9AAF00042F33 /* Repository */,
+				505ACA502BBA9A7F00042F33 /* Service */,
+			);
+			path = VehicleService;
+			sourceTree = "<group>";
+		};
+		505ACA4F2BBA9A7800042F33 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5065F3C22B8DD045005F6AD4 /* Vehicles.swift */,
+				505ACA552BBA9C3800042F33 /* VehicleProfile.swift */,
+				50E0DB6D2BE238C700D1169E /* UpdateProfileRequest.swift */,
+				506764212BE38A76002FAFE8 /* UpdateVehicleResponse.swift */,
+				50282C662BF4E46D0077F7DB /* VehicleProfileRequest.swift */,
+				5065F3C62B8E10E1005F6AD4 /* DeviceAssociation.swift */,
+				5065F3CA2B8E4192005F6AD4 /* DeviceTermination.swift */,
+				50282C642BF4DCC20077F7DB /* ValidateImeiRequest.swift */,
+				50D3B7F32BFF254300C6A724 /* AssociateRequest.swift */,
+				50D3B7F52BFF255700C6A724 /* TerminateRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		505ACA502BBA9A7F00042F33 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				505ACA592BBA9DE400042F33 /* VehicleService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		505ACA512BBA9A9400042F33 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				505ACA532BBA9BE900042F33 /* VehicleEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		505ACA522BBA9AAF00042F33 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				505ACA572BBA9DA400042F33 /* VehicleRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		507A624A2BC654CC00D98983 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				507A624C2BC65BC100D98983 /* Endpoint */,
+				507A62522BC65E6800D98983 /* Model */,
+				507A624B2BC65BB200D98983 /* Repository */,
+				507A624D2BC65BEA00D98983 /* Service */,
+			);
+			path = NotificationService;
+			sourceTree = "<group>";
+		};
+		507A624B2BC65BB200D98983 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				507A62592BC66ED600D98983 /* NotificationRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		507A624C2BC65BC100D98983 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				507A624E2BC65CB800D98983 /* NotificationEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		507A624D2BC65BEA00D98983 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				507A62572BC66E7900D98983 /* NotificationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		507A62522BC65E6800D98983 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				507A62532BC65E8000D98983 /* NotificationRequest.swift */,
+				507A625B2BC6AD0700D98983 /* NotificationModel.swift */,
+				50E0DB692BE2235C00D1169E /* DeviceTokenRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		50813FA42C22DA7500E7F465 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				50CB2C8E2C2CF4D70070ACE7 /* userProfile.json */,
+				5041C3052C2BF2D5002690E9 /* updateProfile.json */,
+				5041C3022C2BEF66002690E9 /* associateDevice.json */,
+				5041C3012C2BEF66002690E9 /* terminareDevice.json */,
+				5041C2FF2C2BE872002690E9 /* validateImei.json */,
+				50378E9B2C2B51CF00125D85 /* alertsHistory.json */,
+				50378E9C2C2B51CF00125D85 /* shareDeviceToken.json */,
+				50378E992C2B48B100125D85 /* vehicleProfile.json */,
+				50378E972C2B484F00125D85 /* vehicleAssociationsList.json */,
+				50CB2B1A2C2943A800289264 /* roEventUpdate.json */,
+				50813FA72C22F4D500E7F465 /* environment.json */,
+				50813FA52C22DB3000E7F465 /* roHistory.json */,
+				50813FA22C22D6D300E7F465 /* roEventStatus.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		50F4BF142B7B4B4300B5AFDE /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF152B7B4B4300B5AFDE /* EnvironmentDetail.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		50F4BF182B7B4B4300B5AFDE /* AppManager */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF192B7B4B4300B5AFDE /* AppManager.swift */,
+			);
+			path = AppManager;
+			sourceTree = "<group>";
+		};
+		50F4BF1A2B7B4B4400B5AFDE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF1B2B7B4B4400B5AFDE /* HTTPClient.swift */,
+				50F4BF1C2B7B4B4400B5AFDE /* RequestMethod.swift */,
+				50F4BF1D2B7B4B4400B5AFDE /* NetworkError.swift */,
+				50F4BF1E2B7B4B4400B5AFDE /* Endpoint.swift */,
+				505ACA4C2BBA963E00042F33 /* Response.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		50F4BF1F2B7B4B4400B5AFDE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF202B7B4B4400B5AFDE /* String.swift */,
+				50F4BF212B7B4B4400B5AFDE /* UIApplication.swift */,
+				50E0DB542BE0BE6800D1169E /* Encodable.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		50F4BF222B7B4B4400B5AFDE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF232B7B4B4400B5AFDE /* Constant.swift */,
+				50F4BF242B7B4B4400B5AFDE /* SecureStoreManager.swift */,
+				50F4BF252B7B4B4400B5AFDE /* DebugPrint.swift */,
+				50F4BF262B7B4B4400B5AFDE /* CustomError.swift */,
+				509A8A382BE8C17800650884 /* ErrorResponse.swift */,
+				50F4BF272B7B4B4400B5AFDE /* Helper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		50F4BF282B7B4B4400B5AFDE /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF292B7B4B4400B5AFDE /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		50F4BF2A2B7B4B4400B5AFDE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				507A624A2BC654CC00D98983 /* NotificationService */,
+				505ACA4E2BBA9A3D00042F33 /* VehicleService */,
+				50F4BF2B2B7B4B4400B5AFDE /* RemoteOperationServices */,
+				50F4BF2F2B7B4B4400B5AFDE /* UserService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		50F4BF2B2B7B4B4400B5AFDE /* RemoteOperationServices */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF2D2B7B4B4400B5AFDE /* Endpoint */,
+				500ABBA22B9ADEA800B0FE9E /* Model */,
+				50F4BF2C2B7B4B4400B5AFDE /* Repository */,
+				50F4BF2E2B7B4B4400B5AFDE /* Service */,
+			);
+			path = RemoteOperationServices;
+			sourceTree = "<group>";
+		};
+		50F4BF2C2B7B4B4400B5AFDE /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				500ABBA52B9B0EEF00B0FE9E /* RemoteOperationRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		50F4BF2D2B7B4B4400B5AFDE /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				5010E0962B99E161004724AD /* RemoteOperationEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		50F4BF2E2B7B4B4400B5AFDE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				500ABBA72B9B0F0300B0FE9E /* RemoteOperationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		50F4BF2F2B7B4B4400B5AFDE /* UserService */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF322B7B4B4400B5AFDE /* Endpoint */,
+				505ACA492BBA952C00042F33 /* Model */,
+				50F4BF302B7B4B4400B5AFDE /* Repository */,
+				50F4BF342B7B4B4400B5AFDE /* Service */,
+			);
+			path = UserService;
+			sourceTree = "<group>";
+		};
+		50F4BF302B7B4B4400B5AFDE /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF312B7B4B4400B5AFDE /* UserRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		50F4BF322B7B4B4400B5AFDE /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF332B7B4B4400B5AFDE /* UserEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		50F4BF342B7B4B4400B5AFDE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF352B7B4B4400B5AFDE /* UserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		50F4BF362B7B4B4400B5AFDE /* AppAuth */ = {
+			isa = PBXGroup;
+			children = (
+				50F4BF372B7B4B4400B5AFDE /* AppAuthInjection.swift */,
+				50F4BF382B7B4B4400B5AFDE /* AppAuthProvider.swift */,
+				50F4BF392B7B4B4400B5AFDE /* AuthProtocol.swift */,
+				50F4BF3A2B7B4B4400B5AFDE /* AuthManager.swift */,
+			);
+			path = AppAuth;
+			sourceTree = "<group>";
+		};
+		751A858B2974B5026AC39CED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9526189DBB51CDCE6B9351D3 /* Pods_VehicleConnectSDK.framework */,
+				94A7F8B4DEDE18FC646A1C54 /* Pods_VehicleConnectSDK_VehicleConnectSDKTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA9AE8783E2135376AE03816 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA4C58F407892C1D5E85428A /* Pods-VehicleConnectSDK.debug.xcconfig */,
+				D3EF8FEC52C7C08EB0B2619D /* Pods-VehicleConnectSDK.release.xcconfig */,
+				0A00F0C13FEAA5BBEC98E577 /* Pods-VehicleConnectSDK-VehicleConnectSDKTests.debug.xcconfig */,
+				2765A6B405E524B0D560FFFE /* Pods-VehicleConnectSDK-VehicleConnectSDKTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		505390C42B721F9B003CB731 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				505390DA2B721F9B003CB731 /* VehicleConnectSDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5047E02A2C46412D0033CC95 /* SdkUnitTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5047E0362C4641300033CC95 /* Build configuration list for PBXNativeTarget "SdkUnitTestApp" */;
+			buildPhases = (
+				5047E0272C46412D0033CC95 /* Sources */,
+				5047E0282C46412D0033CC95 /* Frameworks */,
+				5047E0292C46412D0033CC95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SdkUnitTestApp;
+			productName = SdkUnitTestApp;
+			productReference = 5047E02B2C46412D0033CC95 /* SdkUnitTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		505390C82B721F9B003CB731 /* VehicleConnectSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 505390DD2B721F9B003CB731 /* Build configuration list for PBXNativeTarget "VehicleConnectSDK" */;
+			buildPhases = (
+				63A808A76568876224998895 /* [CP] Check Pods Manifest.lock */,
+				505390C42B721F9B003CB731 /* Headers */,
+				505390C52B721F9B003CB731 /* Sources */,
+				505390C62B721F9B003CB731 /* Frameworks */,
+				505390C72B721F9B003CB731 /* Resources */,
+				50D790202B8731DE00522A0B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VehicleConnectSDK;
+			productName = VehicleConnectSDK;
+			productReference = 505390C92B721F9B003CB731 /* VehicleConnectSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		505390D22B721F9B003CB731 /* VehicleConnectSDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 505390E02B721F9B003CB731 /* Build configuration list for PBXNativeTarget "VehicleConnectSDKTests" */;
+			buildPhases = (
+				7422C8178B06875613A9CC9B /* [CP] Check Pods Manifest.lock */,
+				505390CF2B721F9B003CB731 /* Sources */,
+				505390D02B721F9B003CB731 /* Frameworks */,
+				505390D12B721F9B003CB731 /* Resources */,
+				FA399F902CF535CA7821B9D4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				505390D62B721F9B003CB731 /* PBXTargetDependency */,
+				5047E03A2C4641430033CC95 /* PBXTargetDependency */,
+			);
+			name = VehicleConnectSDKTests;
+			productName = VehicleConnectSDKTests;
+			productReference = 505390D32B721F9B003CB731 /* VehicleConnectSDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		505390C02B721F9B003CB731 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					5047E02A2C46412D0033CC95 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					505390C82B721F9B003CB731 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					505390D22B721F9B003CB731 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 5047E02A2C46412D0033CC95;
+					};
+				};
+			};
+			buildConfigurationList = 505390C32B721F9B003CB731 /* Build configuration list for PBXProject "VehicleConnectSDK" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 505390BF2B721F9B003CB731;
+			productRefGroup = 505390CA2B721F9B003CB731 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				505390C82B721F9B003CB731 /* VehicleConnectSDK */,
+				505390D22B721F9B003CB731 /* VehicleConnectSDKTests */,
+				5047E02A2C46412D0033CC95 /* SdkUnitTestApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5047E0292C46412D0033CC95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5047E0352C4641300033CC95 /* Preview Assets.xcassets in Resources */,
+				5047E0322C4641300033CC95 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		505390C72B721F9B003CB731 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		505390D12B721F9B003CB731 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50378E9D2C2B51CF00125D85 /* alertsHistory.json in Resources */,
+				50378E9E2C2B51CF00125D85 /* shareDeviceToken.json in Resources */,
+				5041C3062C2BF2D5002690E9 /* updateProfile.json in Resources */,
+				5041C3002C2BE873002690E9 /* validateImei.json in Resources */,
+				50CB2B1B2C2943A800289264 /* roEventUpdate.json in Resources */,
+				50813FA62C22DB3000E7F465 /* roHistory.json in Resources */,
+				5041C3032C2BEF66002690E9 /* terminareDevice.json in Resources */,
+				50CB2C8F2C2CF4D80070ACE7 /* userProfile.json in Resources */,
+				50378E9A2C2B48B100125D85 /* vehicleProfile.json in Resources */,
+				50813FA32C22D6D300E7F465 /* roEventStatus.json in Resources */,
+				50813FA82C22F4D500E7F465 /* environment.json in Resources */,
+				5041C3042C2BEF66002690E9 /* associateDevice.json in Resources */,
+				50378E982C2B484F00125D85 /* vehicleAssociationsList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		50D790202B8731DE00522A0B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nlint=\"${PODS_ROOT}/SwiftLint/swiftlint\"\nif which $lint >/dev/null; then\n    $lint --fix && $lint\nelse\n    echo \"warning: SwiftLint not installed in cocoapods\"\n    exit 1\nfi\n";
+		};
+		63A808A76568876224998895 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VehicleConnectSDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7422C8178B06875613A9CC9B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VehicleConnectSDK-VehicleConnectSDKTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA399F902CF535CA7821B9D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VehicleConnectSDK-VehicleConnectSDKTests/Pods-VehicleConnectSDK-VehicleConnectSDKTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VehicleConnectSDK-VehicleConnectSDKTests/Pods-VehicleConnectSDK-VehicleConnectSDKTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VehicleConnectSDK-VehicleConnectSDKTests/Pods-VehicleConnectSDK-VehicleConnectSDKTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5047E0272C46412D0033CC95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5047E0302C46412D0033CC95 /* ContentView.swift in Sources */,
+				5047E02E2C46412D0033CC95 /* SdkUnitTestAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		505390C52B721F9B003CB731 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50F4BF442B7B4B4400B5AFDE /* UIApplication.swift in Sources */,
+				50F4BF4E2B7B4B4400B5AFDE /* AppAuthInjection.swift in Sources */,
+				50282C672BF4E46D0077F7DB /* VehicleProfileRequest.swift in Sources */,
+				50282C652BF4DCC20077F7DB /* ValidateImeiRequest.swift in Sources */,
+				505ACA5A2BBA9DE400042F33 /* VehicleService.swift in Sources */,
+				50F4BF482B7B4B4400B5AFDE /* CustomError.swift in Sources */,
+				5010E0972B99E161004724AD /* RemoteOperationEndpoint.swift in Sources */,
+				50E0DB6A2BE2235C00D1169E /* DeviceTokenRequest.swift in Sources */,
+				505ACA582BBA9DA400042F33 /* VehicleRepository.swift in Sources */,
+				50F4BF402B7B4B4400B5AFDE /* RequestMethod.swift in Sources */,
+				50E0DB552BE0BE6800D1169E /* Encodable.swift in Sources */,
+				50F4BF432B7B4B4400B5AFDE /* String.swift in Sources */,
+				50F4BF512B7B4B4500B5AFDE /* AuthManager.swift in Sources */,
+				50F4BF4A2B7B4B4400B5AFDE /* NetworkManager.swift in Sources */,
+				50AFA1812BFE001400BD93C8 /* RemoteEventUpdateRequest.swift in Sources */,
+				50F4BF4C2B7B4B4400B5AFDE /* UserEndpoint.swift in Sources */,
+				50F4BF502B7B4B4500B5AFDE /* AuthProtocol.swift in Sources */,
+				507A62582BC66E7900D98983 /* NotificationService.swift in Sources */,
+				5065F3CB2B8E4192005F6AD4 /* DeviceTermination.swift in Sources */,
+				505390CE2B721F9B003CB731 /* VehicleConnectSDK.docc in Sources */,
+				50F4BF462B7B4B4400B5AFDE /* SecureStoreManager.swift in Sources */,
+				5065F3C72B8E10E1005F6AD4 /* DeviceAssociation.swift in Sources */,
+				50F4BF492B7B4B4400B5AFDE /* Helper.swift in Sources */,
+				505ACA542BBA9BE900042F33 /* VehicleEndpoint.swift in Sources */,
+				50AFA17F2BFDF9DD00BD93C8 /* RemoteEventStatusRequest.swift in Sources */,
+				50F4BF422B7B4B4400B5AFDE /* Endpoint.swift in Sources */,
+				507A625A2BC66ED600D98983 /* NotificationRepository.swift in Sources */,
+				50AFA1832BFE01AD00BD93C8 /* RemoteEventRequestStatus.swift in Sources */,
+				50D3B7F42BFF254300C6A724 /* AssociateRequest.swift in Sources */,
+				505ACA4D2BBA963E00042F33 /* Response.swift in Sources */,
+				50F4BF3F2B7B4B4400B5AFDE /* HTTPClient.swift in Sources */,
+				507A625C2BC6AD0700D98983 /* NotificationModel.swift in Sources */,
+				500ABBA62B9B0EEF00B0FE9E /* RemoteOperationRepository.swift in Sources */,
+				500ABBA82B9B0F0300B0FE9E /* RemoteOperationService.swift in Sources */,
+				50F4BF4D2B7B4B4400B5AFDE /* UserService.swift in Sources */,
+				505ACA562BBA9C3800042F33 /* VehicleProfile.swift in Sources */,
+				505ACA4B2BBA954600042F33 /* UserProfile.swift in Sources */,
+				50D3B7F62BFF255700C6A724 /* TerminateRequest.swift in Sources */,
+				50F4BF452B7B4B4400B5AFDE /* Constant.swift in Sources */,
+				5065F3C32B8DD045005F6AD4 /* Vehicles.swift in Sources */,
+				50F4BF412B7B4B4400B5AFDE /* NetworkError.swift in Sources */,
+				506764222BE38A76002FAFE8 /* UpdateVehicleResponse.swift in Sources */,
+				50F4BF3B2B7B4B4400B5AFDE /* EnvironmentDetail.swift in Sources */,
+				50F4BF4F2B7B4B4500B5AFDE /* AppAuthProvider.swift in Sources */,
+				50F4BF3E2B7B4B4400B5AFDE /* AppManager.swift in Sources */,
+				50E0DB6E2BE238C700D1169E /* UpdateProfileRequest.swift in Sources */,
+				50F4BF4B2B7B4B4400B5AFDE /* UserRepository.swift in Sources */,
+				50F4BF472B7B4B4400B5AFDE /* DebugPrint.swift in Sources */,
+				500ABBA42B9ADF0E00B0FE9E /* RemoteOperationHistoryRequest.swift in Sources */,
+				507A624F2BC65CB800D98983 /* NotificationEndpoint.swift in Sources */,
+				507A62542BC65E8000D98983 /* NotificationRequest.swift in Sources */,
+				502700F82B9F0A3E00C06221 /* RemoteEventHistory.swift in Sources */,
+				509A8A392BE8C17800650884 /* ErrorResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		505390CF2B721F9B003CB731 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5004349C2BC2CB56008D7DC2 /* VehicleServiceTests.swift in Sources */,
+				50CB2B1F2C29730100289264 /* DataMock.swift in Sources */,
+				506764242BE40AFC002FAFE8 /* NotificationServiceTests.swift in Sources */,
+				505390D92B721F9B003CB731 /* VehicleConnectSDKTests.swift in Sources */,
+				5041C3082C2C415C002690E9 /* VehicleRepositoryTests.swift in Sources */,
+				500434A02BC2CB7D008D7DC2 /* ROServiceTests.swift in Sources */,
+				500434982BC2CAD6008D7DC2 /* EnvironmentTests.swift in Sources */,
+				5004349A2BC2CB29008D7DC2 /* UserServiceTests.swift in Sources */,
+				508C56BF2C2C9E66003ECCF0 /* NotificationRepositoryTests.swift in Sources */,
+				50CB2C912C2D009B0070ACE7 /* UserRepositoryTests.swift in Sources */,
+				5047E01B2C4633BA0033CC95 /* SecureStoreManagerTests.swift in Sources */,
+				50CB2B1D2C29595C00289264 /* RORepositoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5047E03A2C4641430033CC95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5047E02A2C46412D0033CC95 /* SdkUnitTestApp */;
+			targetProxy = 5047E0392C4641430033CC95 /* PBXContainerItemProxy */;
+		};
+		505390D62B721F9B003CB731 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 505390C82B721F9B003CB731 /* VehicleConnectSDK */;
+			targetProxy = 505390D52B721F9B003CB731 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5047E0372C4641300033CC95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SdkUnitTestApp/Preview Content\"";
+				DEVELOPMENT_TEAM = WGAHQ2H3J9;
+				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = arm64;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harman.vehicleconnects.SdkUnitTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5047E0382C4641300033CC95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SdkUnitTestApp/Preview Content\"";
+				DEVELOPMENT_TEAM = WGAHQ2H3J9;
+				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = arm64;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harman.vehicleconnects.SdkUnitTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		505390DB2B721F9B003CB731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_ARCHS = x86_64;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		505390DC2B721F9B003CB731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_ARCHS = x86_64;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		505390DE2B721F9B003CB731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA4C58F407892C1D5E85428A /* Pods-VehicleConnectSDK.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = arm64;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harman.VehicleConnectSDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		505390DF2B721F9B003CB731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3EF8FEC52C7C08EB0B2619D /* Pods-VehicleConnectSDK.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = arm64;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harman.VehicleConnectSDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		505390E12B721F9B003CB731 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A00F0C13FEAA5BBEC98E577 /* Pods-VehicleConnectSDK-VehicleConnectSDKTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WGAHQ2H3J9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = arm64;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harman.VehicleConnectSDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SdkUnitTestApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SdkUnitTestApp";
+			};
+			name = Debug;
+		};
+		505390E22B721F9B003CB731 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2765A6B405E524B0D560FFFE /* Pods-VehicleConnectSDK-VehicleConnectSDKTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WGAHQ2H3J9;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = arm64;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harman.VehicleConnectSDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SdkUnitTestApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SdkUnitTestApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5047E0362C4641300033CC95 /* Build configuration list for PBXNativeTarget "SdkUnitTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5047E0372C4641300033CC95 /* Debug */,
+				5047E0382C4641300033CC95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		505390C32B721F9B003CB731 /* Build configuration list for PBXProject "VehicleConnectSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				505390DB2B721F9B003CB731 /* Debug */,
+				505390DC2B721F9B003CB731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		505390DD2B721F9B003CB731 /* Build configuration list for PBXNativeTarget "VehicleConnectSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				505390DE2B721F9B003CB731 /* Debug */,
+				505390DF2B721F9B003CB731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		505390E02B721F9B003CB731 /* Build configuration list for PBXNativeTarget "VehicleConnectSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				505390E12B721F9B003CB731 /* Debug */,
+				505390E22B721F9B003CB731 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 505390C02B721F9B003CB731 /* Project object */;
+}

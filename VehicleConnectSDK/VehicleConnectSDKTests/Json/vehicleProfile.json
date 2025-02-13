@@ -1,0 +1,52 @@
+{
+    "message": "SUCCESS",
+    "data": [
+        {
+            "schemaVersion": "1.0",
+            "vin": "VINDOZWRTAJDT5543",
+            "vehicleId": "DOZWRWAJDT5163",
+            "createdOn": 1716465032133,
+            "updatedOn": 1719215374178,
+            "productionDate": null,
+            "soldRegion": null,
+            "saleDate": null,
+            "vehicleAttributes": {
+                "make": "NA",
+                "model": "NA",
+                "marketingColor": null,
+                "baseColor": "red",
+                "modelYear": "NA",
+                "destinationCountry": null,
+                "engineType": null,
+                "bodyStyle": null,
+                "bodyType": "compact",
+                "name": "venkata car ",
+                "trim": null,
+                "type": "UNKNOWN",
+                "fuelType": null
+            },
+            "authorizedUsers": [
+                {
+                    "userId": "new_user@yopmail.com",
+                    "role": "VEHICLE_OWNER",
+                    "source": null,
+                    "status": null,
+                    "tc": null,
+                    "pp": null,
+                    "createdOn": null,
+                    "updatedOn": null
+                }
+            ],
+            "vehicleArchType": "hu",
+            "dummy": null,
+            "events": null,
+            "customParams": null,
+            "saleAttributes": null,
+            "eolValidationInProgress": null,
+            "blockEnrollment": null,
+            "authorizedPartners": null,
+            "ePIDDBChecksum": null,
+            "connectedPlatform": null
+        }
+    ]
+}

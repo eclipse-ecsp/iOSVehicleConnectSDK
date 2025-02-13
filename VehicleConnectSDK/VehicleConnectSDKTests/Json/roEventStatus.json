@@ -1,0 +1,42 @@
+{
+  "roEvent": {
+    "EventID": "RemoteOperationTrunk",
+    "Version": "1.1",
+    "Timestamp": 1719214034026,
+    "Data": {
+      "vehicleArchType": "hu",
+      "state": "LOCKED",
+      "roRequestId": "2d68a600-31fb-11ef-a07e-7bb39a94001f"
+    },
+    "RequestId": "2d68a600-31fb-11ef-a07e-7bb39a94001f"
+  },
+  "roStatus": "PENDING",
+  "roResponseList": [],
+  "deviceMessageFailures": [
+    {
+      "EventID": "DeviceMessageFailure",
+      "Version": "1.0",
+      "Timestamp": 1719214034554,
+      "Data": {
+        "failedIgniteEvent": {
+          "EventID": "RemoteOperationTrunk",
+          "Version": "1.1",
+          "Timestamp": 1719214034026,
+          "Data": {
+            "vehicleArchType": "hu",
+            "state": "LOCKED",
+            "roRequestId": "2d68a600-31fb-11ef-a07e-7bb39a94001f"
+          },
+          "RequestId": "2d68a600-31fb-11ef-a07e-7bb39a94001f"
+        },
+        "retryAttempts": 0,
+        "shoudlerTapRetryAttempts": 0,
+        "deviceDeliveryCutoffExceeded": false,
+        "deviceStatusInactive": true,
+        "errorCode": "DEVICE_STATUS_INACTIVE"
+      },
+      "RequestId": "2d68a600-31fb-11ef-a07e-7bb39a94001f"
+    }
+  ],
+  "roNotificationList": []
+}

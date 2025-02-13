@@ -1,0 +1,46 @@
+{
+    "code": "assoc-023",
+    "message": "Success",
+    "data": [
+        {
+            "vehicleId": "DOAM3YOGGNP183",
+            "softwareVersion": "RSR1.201013.001",
+            "deviceType": "dongle",
+            "metadata": {
+                "userVehicleAuthStatus": "false"
+            },
+            "associationId": 185,
+            "serialNumber": "111119",
+            "deviceId": "DOAM3UJGGNP183",
+            "associationStatus": "DISASSOCIATED",
+            "imei": "358240051111119",
+            "imsi": "410072821111119",
+            "ssid": "SSID-111119",
+            "iccid": "8991101200003111119",
+            "msisdn": "+919003111119",
+            "bssid": "d8:c7:c8:44:32:111119",
+            "associatedOn": "2024-06-07T14:22:43+0000",
+            "disassociatedOn": "2024-06-12T15:05:39+0000"
+        },
+        {
+            "vehicleId": "DOICJIM3KXF181",
+            "softwareVersion": "RSR1.201013.001",
+            "deviceType": "dongle",
+            "metadata": {
+                "userVehicleAuthStatus": "false"
+            },
+            "associationId": 183,
+            "serialNumber": "111119",
+            "deviceId": "DOICJKM3NXF181",
+            "associationStatus": "DISASSOCIATED",
+            "imei": "358240051111119",
+            "imsi": "410072821111119",
+            "ssid": "SSID-111119",
+            "iccid": "8991101200003111119",
+            "msisdn": "+919003111119",
+            "bssid": "d8:c7:c8:44:32:111119",
+            "associatedOn": "2024-06-07T14:03:19+0000",
+            "disassociatedOn": "2024-06-07T14:20:18+0000"
+        }
+    ]
+}
