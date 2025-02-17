@@ -6,7 +6,7 @@ target 'VehicleConnectSDK' do
   use_frameworks!
 
   # Pods for VehicleConnectSDK
-    pod 'AppAuth'
+    pod 'AppAuth', '1.6.0'
     pod 'SwiftLint'
   target 'VehicleConnectSDKTests' do
     # Pods for testing

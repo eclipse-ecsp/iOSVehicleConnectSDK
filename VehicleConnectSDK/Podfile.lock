@@ -8,7 +8,7 @@ PODS:
   - SwiftLint (0.54.0)
 
 DEPENDENCIES:
-  - AppAuth
+  - AppAuth (= 1.6.0)
   - SwiftLint
 
 SPEC REPOS:
@@ -20,6 +20,6 @@ SPEC CHECKSUMS:
   AppAuth: 8fca6b5563a5baef2c04bee27538025e4ceb2add
   SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
 
-PODFILE CHECKSUM: 1dd8d30c3681739c9c266155f990444be75afd47
+PODFILE CHECKSUM: 2af3f849be1fdf3aeb9e9b2c5083d8969ea91eca
 
 COCOAPODS: 1.16.2
