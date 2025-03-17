@@ -92,7 +92,7 @@ final class UserRepositoryTests: XCTestCase {
         case .success(let status):
             XCTAssertTrue(status)
         case .failure:
-            XCTFail("The request is failed")
+            XCTFail(kRequestFailed)
         }
     }
     

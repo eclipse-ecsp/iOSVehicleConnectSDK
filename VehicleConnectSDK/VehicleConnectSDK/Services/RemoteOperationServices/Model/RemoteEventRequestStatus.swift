@@ -19,7 +19,7 @@
 /// remote operation response of  upadte request
 public struct RemoteEventRequestStatus: Codable {
 
-    public internal (set) var message, requestId: String?
+    public internal(set) var message, requestId: String?
 
     enum CodingKeys: String, CodingKey {
         case message = "message"

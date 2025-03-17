@@ -19,6 +19,7 @@
 import XCTest
 @testable import VehicleConnectSDK
 
+let kRequestFailed = "The request is failed"
 
 final class VehicleRepositoryTests: XCTestCase {
 
@@ -37,7 +38,7 @@ final class VehicleRepositoryTests: XCTestCase {
         case .success(let vehicle):
             XCTAssertNotNil(vehicle.model.vehiclesList?.first?.deviceId, "empty")
         case .failure:
-            XCTFail("The request is failed")
+            XCTFail(kRequestFailed)
         }
     }
     
@@ -52,7 +53,7 @@ final class VehicleRepositoryTests: XCTestCase {
         case .success(let vehicle):
             XCTAssertNotNil(vehicle.model.data?.first?.id ?? "empty")
         case .failure:
-            XCTFail("The request is failed")
+            XCTFail(kRequestFailed)
         }
     }
     
@@ -67,7 +68,7 @@ final class VehicleRepositoryTests: XCTestCase {
         case .success(let vehicle):
             XCTAssertNotNil(vehicle.model.first?.imei ?? "empty")
         case .failure:
-            XCTFail("The request is failed")
+            XCTFail(kRequestFailed)
         }
     }
     
@@ -82,7 +83,7 @@ final class VehicleRepositoryTests: XCTestCase {
         case .success(let vehicle):
             XCTAssertNotNil(vehicle.model.associationId ?? "empty")
         case .failure:
-            XCTFail("The request is failed")
+            XCTFail(kRequestFailed)
         }
     }
         
@@ -97,7 +98,7 @@ final class VehicleRepositoryTests: XCTestCase {
             case .success(let vehicle):
                 XCTAssertNotNil(vehicle.model.code)
             case .failure:
-                XCTFail("The request is failed")
+                XCTFail(kRequestFailed)
             }
         }
     
@@ -113,7 +114,7 @@ final class VehicleRepositoryTests: XCTestCase {
             case .success(let vehicle):
                 XCTAssertNotNil(vehicle.model.data)
             case .failure:
-                XCTFail("The request is failed")
+                XCTFail(kRequestFailed)
             }
         }
     
