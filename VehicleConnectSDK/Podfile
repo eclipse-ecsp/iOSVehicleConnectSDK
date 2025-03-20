@@ -7,7 +7,7 @@ target 'VehicleConnectSDK' do
 
   # Pods for VehicleConnectSDK
     pod 'AppAuth', '1.7.5'
-    pod 'SwiftLint', '0.55.1'
+    pod 'SwiftLint'
   target 'VehicleConnectSDKTests' do
     # Pods for testing
   end

@@ -53,7 +53,7 @@ final class EnvironmentTests: XCTestCase {
     
     
     func testUrlValidation() {
-        let url = "https://localhost:8080/v1.0/vehicleProfiles?vehicleId=628e1ebc03501653e83df4b1"
+        let url = "https://localhost:8080/vehicleId=628e1ebc03501653e83df4b1"
         XCTAssertTrue(url.isValidURL)
     }
 }

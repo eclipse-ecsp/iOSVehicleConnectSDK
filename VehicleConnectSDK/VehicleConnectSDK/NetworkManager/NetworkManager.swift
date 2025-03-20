@@ -53,6 +53,7 @@ public class NetworkManager: ObservableObject {
         stopMonitoring()
     }
 
+    /// This method is used to start internet network monitoring
     public func startMonitoring() {
         guard !isMonitoring else { return }
 
@@ -72,6 +73,7 @@ public class NetworkManager: ObservableObject {
         isMonitoring = true
     }
 
+    /// This method is used to stop internet network monitoring
     public func stopMonitoring() {
         guard isMonitoring, let monitor = monitor else { return }
         monitor.cancel()

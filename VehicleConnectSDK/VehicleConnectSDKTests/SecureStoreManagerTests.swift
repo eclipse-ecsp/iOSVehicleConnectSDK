@@ -20,11 +20,7 @@ import XCTest
 @testable import VehicleConnectSDK
 
 final class SecureStoreManagerTests: XCTestCase {
-    
-    override func setUpWithError() throws {
-       
-    }
-    
+        
     func testSetData() throws {
         let userData = DataMock().getJsonData(fromFile: "userProfile" , ext: "json")
         if let contentData = try? JSONEncoder().encode(userData) {

@@ -111,34 +111,24 @@ extension AppAuthProvider {
             return .failure(.notRechable)
         }
     }
-///   Making the authentication call on signin click
+    ///   Making the authentication call on signin click
     private func authentication(forSignIn: Bool) async -> Result<Bool, CustomError> {
+        if !(NetworkManager.shared.isConnected) { return .failure(.notRechable)}
+        if !(self.accessToken.isEmpty) { return .failure(.alreadySignin)}
 
-        if NetworkManager.shared.isConnected {
-            if let environment = AppManager.environment {
-                let baseUrl = forSignIn ? environment.signInUrl : environment.signUpUrl
-                let authEndpoint = baseUrl + (forSignIn ? UserEndpoint.signIn.path : UserEndpoint.signUp.path)
-                let tokenEndpoint = baseUrl + UserEndpoint.authToken.path
-
-                if self.accessToken.isEmpty {
-                    return await withCheckedContinuation { continuation in
-                        self.authenticate(environment: environment, authEndpoint: authEndpoint,
-                                          tokenEndpoint: tokenEndpoint) { isSuccess in
-                            continuation.resume(returning: isSuccess ? .success(true) : .failure(.emptyToken))
-                        }
-                    }
-                } else {
-                    return .failure(.alreadySignin)
-                }
-            } else {
-                return .failure(.environmentNotConfigured)
+        guard let environment = AppManager.environment else { return .failure(.environmentNotConfigured) }
+        let baseUrl = forSignIn ? environment.signInUrl : environment.signUpUrl
+        let authEndpoint = baseUrl + (forSignIn ? UserEndpoint.signIn.path : UserEndpoint.signUp.path)
+        let tokenEndpoint = baseUrl + UserEndpoint.authToken.path
+        return await withCheckedContinuation { continuation in
+            self.authenticate(environment: environment, authEndpoint: authEndpoint,
+                              tokenEndpoint: tokenEndpoint) { isSuccess in
+                continuation.resume(returning: isSuccess ? .success(true) : .failure(.emptyToken))
             }
-        } else {
-            return .failure(.notRechable)
         }
     }
 
-///  Authenticate function to create auth request
+    ///  Authenticate function to create auth request
     private func authenticate(environment: EnvironmentDetail, authEndpoint: String, tokenEndpoint: String,
                               _ handler: @escaping(_ isSuccess: Bool) -> Void) {
         guard let authUrl = URL.init(string: authEndpoint),
@@ -169,7 +159,7 @@ extension AppAuthProvider {
             }
         }
     }
-///   Refresh token api call
+    ///   Refresh token api call
     private func makeRequestToRefreshAccessToken(completed: @escaping(_ isSuccess: Bool) -> Void) {
         if self.retryCount >= kRefreshTokenMaxRetryCount {
             DebugPrint.message("We tried maximum to refresh token but request keep failing.")
@@ -188,9 +178,9 @@ extension AppAuthProvider {
             self.refreshAuthTokenIfNeeded { (accessToken, error) in
                 if error == nil {
                     DebugPrint.message("Refresh token request completed")
-                  /**
-                  * To Do: Ensure the accessToken is not printed anywhere 
-                  */
+                    /**
+                     * To Do: Ensure the accessToken is not printed anywhere
+                     */
                     self.manageRetryCounterValue(newValue: 0)
                     self.accessToken = accessToken ?? ""
                     for completion in self.pendingTokenRefreshTransactions {
@@ -207,12 +197,14 @@ extension AppAuthProvider {
                     }
                     DebugPrint.message("Refresh Token request has been failed. Hence resending again.")
                     self.refreshTokenRequestStatus = .failed
-                    self.makeRequestToRefreshAccessToken(completed: { (_) in })
+                    self.makeRequestToRefreshAccessToken { isSuccess in
+                        DebugPrint.message("Refresh Token isSuccess: \(isSuccess)")
+                    }
                 }
             }
         }
     }
-/// Refresh token 
+    /// Refresh token
     private func refreshAuthTokenIfNeeded(completeBlock: @escaping ( _ token: String?, _ error: Error? ) -> Void) {
         let currentAccessToken = self.oidAuthState?.lastTokenResponse?.accessToken
         if self.oidAuthState == nil {
@@ -250,7 +242,7 @@ extension AppAuthProvider {
     }
 
     private var isTokenEmpty: Bool {
-        return self.accessToken.isEmpty || self.accessToken.count == 0
+        return self.accessToken.isEmpty
     }
 
     func isAuthorizationExpired() -> Bool {

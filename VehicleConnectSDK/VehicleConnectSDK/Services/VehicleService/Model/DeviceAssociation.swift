@@ -29,10 +29,10 @@ public enum DeviceAssociationStatus: String, Codable {
 /// Device association status summary
 public struct DeviceAssociation: Codable {
 
-    public internal (set) var message: String?
-    public internal (set) var code: String?
-    public internal (set) var associationId: Int64?
-    public internal (set) var status: DeviceAssociationStatus?
+    public internal(set) var message: String?
+    public internal(set) var code: String?
+    public internal(set) var associationId: Int64?
+    public internal(set) var status: DeviceAssociationStatus?
 
     enum CodingKeys: String, CodingKey {
         case associationId = "associationID"
@@ -44,19 +44,19 @@ public struct DeviceAssociation: Codable {
 
 /// IMEI verification summary API response
 public struct ImeiVerification: Codable {
-    public internal (set) var manufacturingDate: Double = 0
-    public internal (set) var recordDate: Double = 0
-    public internal (set) var createdDate: Double = 0
-    public internal (set) var model: String?
-    public internal (set) var imei: String?
-    public internal (set) var serialNumber: String?
-    public internal (set) var packageSerialNumber: String?
-    public internal (set) var platformVersion: String?
-    public internal (set) var iccid: String?
-    public internal (set) var ssid: String?
-    public internal (set) var bssid: String?
-    public internal (set) var msisdn: String?
-    public internal (set) var imsi: String?
-    public internal (set) var factoryAdmin: String?
-    public internal (set) var state: String?
+    public internal(set) var manufacturingDate: Double = 0
+    public internal(set) var recordDate: Double = 0
+    public internal(set) var createdDate: Double = 0
+    public internal(set) var model: String?
+    public internal(set) var imei: String?
+    public internal(set) var serialNumber: String?
+    public internal(set) var packageSerialNumber: String?
+    public internal(set) var platformVersion: String?
+    public internal(set) var iccid: String?
+    public internal(set) var ssid: String?
+    public internal(set) var bssid: String?
+    public internal(set) var msisdn: String?
+    public internal(set) var imsi: String?
+    public internal(set) var factoryAdmin: String?
+    public internal(set) var state: String?
 }

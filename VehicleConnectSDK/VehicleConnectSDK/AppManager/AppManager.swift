@@ -27,6 +27,7 @@ public struct AppManager {
 
     private static var currentEnvironment: EnvironmentDetail?
 
+    /// Get the environment details
     public static var environment: EnvironmentDetail? {
         if currentEnvironment == nil {
             if let contentData = SecureStoreManager.getData(key: AppManagerKey.kEnvironmentConfig),
@@ -37,12 +38,13 @@ public struct AppManager {
         return currentEnvironment
     }
 
+    /// Used to configure environment
+    /// - Parameter environment: evnvironment details
     public static func configure(_ environment: EnvironmentDetail) {
         currentEnvironment = environment
         if let contentData = try? JSONEncoder().encode(currentEnvironment) {
             _ =  SecureStoreManager.delete(itemForKey: AppManagerKey.kEnvironmentConfig)
             _ = SecureStoreManager.set(data: contentData, forKey: AppManagerKey.kEnvironmentConfig)
-
         }
     }
 }

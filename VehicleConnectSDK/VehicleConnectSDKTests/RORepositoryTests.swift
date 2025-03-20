@@ -19,9 +19,6 @@
 import XCTest
 @testable import VehicleConnectSDK
 
-
-
-
 final class RORepositoryTests: XCTestCase {
     let vehicleId = "DOZWRTAJDT5163"
     let userEmail = "new_robot_user_1701242348@yopmail.com"

@@ -92,7 +92,7 @@ class DataMock {
     func getJsonData(fromFile name: String, ext: String = "json") -> Data {
         let bundle = Bundle(for: Self.self)
         let url = bundle.url(forResource: name, withExtension: ext)!
-        let data = try! Data(contentsOf: url)
+        guard let data = try? Data(contentsOf: url) else { return Data() }
         return data
     }
     
