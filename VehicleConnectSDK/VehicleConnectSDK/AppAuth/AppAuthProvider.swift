@@ -242,7 +242,7 @@ extension AppAuthProvider {
     }
 
     private var isTokenEmpty: Bool {
-        return self.accessToken.isEmpty || self.accessToken.count == 0
+        return self.accessToken.isEmpty
     }
 
     func isAuthorizationExpired() -> Bool {

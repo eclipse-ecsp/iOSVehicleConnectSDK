@@ -27,7 +27,6 @@ public struct AppManager {
 
     private static var currentEnvironment: EnvironmentDetail?
 
-    
     /// Get the environment details
     public static var environment: EnvironmentDetail? {
         if currentEnvironment == nil {
@@ -38,7 +37,7 @@ public struct AppManager {
         }
         return currentEnvironment
     }
-    
+
     /// Used to configure environment
     /// - Parameter environment: evnvironment details
     public static func configure(_ environment: EnvironmentDetail) {
