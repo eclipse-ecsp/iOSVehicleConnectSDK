@@ -18,8 +18,8 @@
 
 // Unit test endpoint constant
 struct TestingEndpoint {
-  static let kBaseUrl = "https://abchfashga.com/"
-  static let kProfileUrl = "https://abchfashga.com/"
+  static let kBaseUrl = "https://localhost.com/"
+  static let kProfileUrl = "https://localhost.com/"
 }
 
 // Authentication token and refresh token constant
