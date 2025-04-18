@@ -18,10 +18,11 @@ jobs:
     - name: Set Xcode Version
       run: sudo xcode-select -s /Applications/Xcode_15.2.app
 
+    - name: Install CocoaPods
+      run: brew install --formula cocoapods
+  
     - name: Install Dependencies
-      run: |
-        brew install cocoapods || true
-        pod install
+      run: pod install
 
     - name: Build Framework
       run: |
