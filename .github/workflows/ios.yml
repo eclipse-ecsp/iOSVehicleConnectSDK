@@ -22,7 +22,9 @@ jobs:
       run: brew install --formula cocoapods
   
     - name: Install Dependencies
-      run: pod install
+      run: 
+       cd VehicleConnectSDK
+       pod install
 
     - name: Build Framework
       run: |
