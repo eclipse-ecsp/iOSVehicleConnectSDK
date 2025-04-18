@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1540"
-   version = "1.7">
+   LastUpgradeVersion = "1630"
+   version = "2.2">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
       buildArchitectures = "Automatic">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <AutocreatedTestPlanReference>
+            </AutocreatedTestPlanReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -19,7 +30,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "505390D22B721F9B003CB731"
+               BlueprintIdentifier = "8782D9352DAE44E800A5F375"
                BuildableName = "VehicleConnectSDKTests.xctest"
                BlueprintName = "VehicleConnectSDKTests"
                ReferencedContainer = "container:VehicleConnectSDK.xcodeproj">

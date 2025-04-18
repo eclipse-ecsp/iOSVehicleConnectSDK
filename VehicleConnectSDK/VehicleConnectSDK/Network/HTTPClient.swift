@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
+import Foundation
+
 /// HTTPClient  process the api request and return the raw data response
 public protocol HTTPClientProtocol {
     func sendRequest(endpoint: Endpoint) async -> Result<Data, NetworkError>
@@ -28,7 +30,7 @@ class HTTPClient: HTTPClientProtocol {
     /// - Returns: Return response data and error
     public func sendRequest(endpoint: Endpoint) async -> Result<Data, NetworkError> {
         let urlString = endpoint.baseUrl + endpoint.path
-        DebugPrint.message("URL: \(urlString)")
+        DebugPrint.info("URL: \(urlString)")
         guard urlString.isValidURL, let url = URL(string: urlString) else {
             return .failure(.invalidURL)
         }
@@ -36,11 +38,11 @@ class HTTPClient: HTTPClientProtocol {
         request.httpMethod = endpoint.method.rawValue
         if let httpHeader = endpoint.header {
             request.allHTTPHeaderFields = httpHeader
-            DebugPrint.message("Headers: \(httpHeader)")
+            DebugPrint.info("Headers: \(httpHeader)")
         }
         if let body = endpoint.body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-            DebugPrint.message("Body: \(body)")
+            DebugPrint.info("Body: \(body)")
         }
         return await send(request)
     }
@@ -50,9 +52,9 @@ class HTTPClient: HTTPClientProtocol {
     /// - Returns: Return response data and error
     private func send(_ request: URLRequest) async -> Result<Data, NetworkError> {
         do {
-            DebugPrint.message("Request: \(request)")
+            DebugPrint.info("Request: \(request)")
             let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
-            DebugPrint.message("Response: \(response)")
+            DebugPrint.info("Response: \(response)")
             guard let response = response as? HTTPURLResponse else {
                 return .failure(.noResponse)
             }

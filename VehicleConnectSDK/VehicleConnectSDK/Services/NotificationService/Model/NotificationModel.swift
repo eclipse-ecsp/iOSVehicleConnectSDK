@@ -15,6 +15,7 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
+import Foundation
 
 /// Vehicle notification  api response model
 public struct VehicleAlerts: Codable {

@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
+import Foundation
+
 /// Response contains raw data with generic model
 public struct Response<T: Decodable> {
     public var data: Data

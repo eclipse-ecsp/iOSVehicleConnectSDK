@@ -16,16 +16,18 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
+import UIKit
+
 /// UserServiceable protocol declare user service public functions thosse can be called from outside the sdk
 public protocol UserServiceable {
 
     /// Sign in with authentication
     /// - Returns: Sign in status and error
-    func signInWithAppAuth() async -> Result<Bool, CustomError>
+    func signInWithAppAuth(_ vc: UIViewController) async -> Result<Bool, CustomError>
 
     /// Sign up with authentication
     /// - Returns: Sign up status and error
-    func signUpWithAppAuth() async -> Result<Bool, CustomError>
+    func signUpWithAppAuth(_ vc: UIViewController) async -> Result<Bool, CustomError>
 
     /// Sign out with authentication
     /// - Returns: Sign out status and error
@@ -37,7 +39,13 @@ public protocol UserServiceable {
     /// CustomError: Error
     func getUserProfile() async -> Result<Response<UserProfile>, CustomError>
 
-    /// Get refresh Toket
+    /// Change password
+    /// - Returns:
+    /// Response:  Raw data with model
+    /// CustomError: Error
+    func changePassword() async -> Result<Response<ChangePassword>, CustomError>
+
+    /// Get refresh Token
     /// - Returns: Bool , error( refresh token succes or not)
     func refreshAccessToken() async -> Result<Bool, CustomError>
 
@@ -55,12 +63,12 @@ public struct UserService: UserServiceable {
         userRepository = UserRepository()
     }
 
-    public func signInWithAppAuth() async -> Result<Bool, CustomError> {
-        return await userRepository.signInWithAppAuth()
+    public func signInWithAppAuth(_ vc: UIViewController) async -> Result<Bool, CustomError> {
+        return await userRepository.signInWithAppAuth(vc)
     }
 
-    public func signUpWithAppAuth() async -> Result<Bool, CustomError> {
-        return await userRepository.signUpWithAppAuth()
+    public func signUpWithAppAuth(_ vc: UIViewController) async -> Result<Bool, CustomError> {
+        return await userRepository.signUpWithAppAuth(vc)
     }
 
     public func signOutWithAppAuth() async -> Result<Bool, CustomError> {
@@ -79,4 +87,7 @@ public struct UserService: UserServiceable {
         return await userRepository.getUserProfile()
     }
 
+    public func changePassword() async -> Result<Response<ChangePassword>, CustomError> {
+        return await userRepository.changePassword()
+    }
 }

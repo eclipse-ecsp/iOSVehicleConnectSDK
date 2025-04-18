@@ -16,13 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
-import SwiftUI
-
-@main
-struct SdkUnitTestAppApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+/// change password model
+public struct ChangePassword: Codable {
+    public var status: Bool?
+    public var message: String?
 }

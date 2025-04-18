@@ -58,12 +58,14 @@ final class UserRepositoryTests: XCTestCase {
     func testSignInWithAppFailed() async {
         let repositorySut = UserRepository()
         AuthManager.shared.authProtocol.accessToken = "4567890-4567890456789rtyuiocfgvhbjksretyui"
-        let result = await repositorySut.signInWithAppAuth()
-        switch result {
-        case .success:
-            XCTFail("The signin fail case test is failed")
-        case .failure(let error):
-            XCTAssertNotNil(error)
+        if let vc = await UIApplication.shared.rootViewController {
+            let result = await repositorySut.signInWithAppAuth(vc)
+            switch result {
+            case .success:
+                XCTFail("The signin fail case test is failed")
+            case .failure(let error):
+                XCTAssertNotNil(error)
+            }
         }
     }
 

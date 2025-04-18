@@ -62,6 +62,10 @@ class AppAuthProvider: NSObject, AuthProtocol {
     private var refreshTokenRequestStatus: RefreshTokenRequestStatus = .completed
     private var pendingTokenRefreshTransactions: [(_ isSuccess: Bool) -> Void] = []
 
+    ///   Refresh token api call
+    private let tokenRefreshQueue = DispatchQueue(label: "com.test.tokenRefreshQueue", attributes: .concurrent)
+    private let tokenRefreshSync = DispatchQueue(label: "com.test.tokenRefreshSyncQueue")
+
     /// Intialize the AppAuthProvider
     static func initialize() -> AppAuthProvider {
         return AppAuthProvider()
@@ -79,13 +83,13 @@ class AppAuthProvider: NSObject, AuthProtocol {
 }
 
 ///  Definition of AuthProtocol function
-extension AppAuthProvider {
-    func signIn() async -> Result<Bool, CustomError> {
-        return await authentication(forSignIn: true)
+extension AppAuthProvider: @unchecked Sendable {
+    func signIn(_ vc: UIViewController) async -> Result<Bool, CustomError> {
+        return await authentication(vc, forSignIn: true)
     }
 
-    func signUp() async -> Result<Bool, CustomError> {
-        return await authentication(forSignIn: false)
+    func signUp(_ vc: UIViewController) async -> Result<Bool, CustomError> {
+        return await authentication(vc, forSignIn: false)
     }
 
     func signOut() async -> Result<Bool, CustomError> {
@@ -101,19 +105,15 @@ extension AppAuthProvider {
     }
 
     func refreshAccessToken() async -> Result<Bool, CustomError> {
-        if NetworkManager.shared.isConnected {
-            return await withCheckedContinuation { continuation in
-                makeRequestToRefreshAccessToken { isSuccess in
-                    continuation.resume(returning: isSuccess ? .success(true) : .failure(.refreshTokenFailed))
-                }
+        return await withCheckedContinuation { continuation in
+            makeRequestToRefreshAccessToken { isSuccess in
+                continuation.resume(returning: isSuccess ? .success(true) : .failure(.refreshTokenFailed))
             }
-        } else {
-            return .failure(.notRechable)
         }
     }
     ///   Making the authentication call on signin click
-    private func authentication(forSignIn: Bool) async -> Result<Bool, CustomError> {
-        if !(NetworkManager.shared.isConnected) { return .failure(.notRechable)}
+    private func authentication(_ vc: UIViewController, forSignIn: Bool) async -> Result<Bool, CustomError> {
+
         if !(self.accessToken.isEmpty) { return .failure(.alreadySignin)}
 
         guard let environment = AppManager.environment else { return .failure(.environmentNotConfigured) }
@@ -121,7 +121,7 @@ extension AppAuthProvider {
         let authEndpoint = baseUrl + (forSignIn ? UserEndpoint.signIn.path : UserEndpoint.signUp.path)
         let tokenEndpoint = baseUrl + UserEndpoint.authToken.path
         return await withCheckedContinuation { continuation in
-            self.authenticate(environment: environment, authEndpoint: authEndpoint,
+            self.authenticate(vc, environment: environment, authEndpoint: authEndpoint,
                               tokenEndpoint: tokenEndpoint) { isSuccess in
                 continuation.resume(returning: isSuccess ? .success(true) : .failure(.emptyToken))
             }
@@ -129,12 +129,13 @@ extension AppAuthProvider {
     }
 
     ///  Authenticate function to create auth request
-    private func authenticate(environment: EnvironmentDetail, authEndpoint: String, tokenEndpoint: String,
-                              _ handler: @escaping(_ isSuccess: Bool) -> Void) {
+    private func authenticate(_ vc: UIViewController,
+                              environment: EnvironmentDetail,
+                              authEndpoint: String, tokenEndpoint: String,
+                              _ handler: @Sendable @escaping (_ isSuccess: Bool) -> Void) {
         guard let authUrl = URL.init(string: authEndpoint),
               let tokenUrl = URL.init(string: tokenEndpoint),
-              let redirectUrl = URL.init(string: environment.redirectUrl),
-              let rootViewController = UIApplication.shared.rootViewController else { return }
+              let redirectUrl = URL.init(string: environment.redirectUrl) else { return }
 
         let additionalParams = [AppAuthKey.kAuthorizationGrant: OIDGrantTypeAuthorizationCode,
                                 AppAuthKey.kAuthorizationPrompt: AppAuthKey.kAuthorizationLogin,
@@ -147,73 +148,90 @@ extension AppAuthProvider {
                                               redirectURL: redirectUrl, responseType: OIDResponseTypeCode,
                                               additionalParameters: additionalParams)
 
-        DebugPrint.message("App auth request: \(request)")
-        currentAuthorizationFlow = OIDAuthState.authState(byPresenting: request,
-                                                          presenting: rootViewController) {[weak self] authState, _ in
-            if let authState = authState {
-                self?.updateOTDAuthState(authState)
-                handler(true)
-            } else {
-                self?.updateOTDAuthState(nil)
-                handler(false)
-            }
-        }
-    }
-    ///   Refresh token api call
-    private func makeRequestToRefreshAccessToken(completed: @escaping(_ isSuccess: Bool) -> Void) {
-        if self.retryCount >= kRefreshTokenMaxRetryCount {
-            DebugPrint.message("We tried maximum to refresh token but request keep failing.")
-            completed(false)
-            return
-        }
-        if refreshTokenRequestStatus  == .inprogress {
-            DebugPrint.message("Refreh token request is in Progess. Hence not requesting again.")
-            pendingTokenRefreshTransactions.append(completed)
-            return
-        }
-        refreshTokenRequestStatus = .inprogress
-        let lockQueue = DispatchQueue(label: "com.test.LockQueue")
-        lockQueue.sync {
-            self.manageRetryCounterValue(newValue: retryCount + 1)
-            self.refreshAuthTokenIfNeeded { (accessToken, error) in
-                if error == nil {
-                    DebugPrint.message("Refresh token request completed")
-                    /**
-                     * To Do: Ensure the accessToken is not printed anywhere
-                     */
-                    self.manageRetryCounterValue(newValue: 0)
-                    self.accessToken = accessToken ?? ""
-                    for completion in self.pendingTokenRefreshTransactions {
-                        completion(true)
-                    }
-                    self.refreshTokenRequestStatus = .completed
-                    completed(true)
+        DebugPrint.info("App auth request: \(request)")
+        DispatchQueue.main.async {
+            self.currentAuthorizationFlow =
+            OIDAuthState.authState(byPresenting: request,
+                                   presenting: vc,
+                                   prefersEphemeralSession: true) { [weak self, handler] authState, error in
+                if let authState = authState {
+                    self?.updateOTDAuthState(authState)
+                    handler(true)
                 } else {
-                    let nsError = error as NSError?
-                    if nsError?.code == kBADURL {
-                        self.manageRetryCounterValue(newValue: kRefreshTokenMaxRetryCount)
-                        completed(false)
-                        return
-                    }
-                    DebugPrint.message("Refresh Token request has been failed. Hence resending again.")
-                    self.refreshTokenRequestStatus = .failed
-                    self.makeRequestToRefreshAccessToken { isSuccess in
-                        DebugPrint.message("Refresh Token isSuccess: \(isSuccess)")
-                    }
+                    DebugPrint.info("Authorization error: \(error?.localizedDescription ?? "Unknown error")")
+                    self?.updateOTDAuthState(nil)
+                    handler(false)
                 }
             }
         }
     }
+
+    private func makeRequestToRefreshAccessToken(completed: @Sendable @escaping (Bool) -> Void) {
+        tokenRefreshSync.async {
+            if self.retryCount >= kRefreshTokenMaxRetryCount {
+                DebugPrint.info("Max token refresh retries exceeded.")
+                completed(false)
+                return
+            }
+
+            if self.refreshTokenRequestStatus == .inprogress {
+                DebugPrint.info("Refresh token is already in progress.")
+                self.pendingTokenRefreshTransactions.append(completed)
+                return
+            }
+
+            self.refreshTokenRequestStatus = .inprogress
+            self.retryCount += 1
+        }
+
+        // Actual token refresh happens outside sync to avoid blocking
+        self.refreshAuthTokenIfNeeded { accessToken, error in
+            self.tokenRefreshSync.async {
+                if let error = error as NSError? {
+                    if error.code == kBADURL {
+                        self.retryCount = kRefreshTokenMaxRetryCount
+                        self.refreshTokenRequestStatus = .failed
+                        completed(false)
+                        return
+                    }
+
+                    DebugPrint.info("Token refresh failed. Retrying...")
+                    self.refreshTokenRequestStatus = .failed
+
+                    // Exponential backoff / delay can be added here
+                    self.tokenRefreshQueue.asyncAfter(deadline: .now() + 1.0) {
+                        self.makeRequestToRefreshAccessToken(completed: completed)
+                    }
+                    return
+                }
+
+                DebugPrint.info("Refresh token successful.")
+
+                self.accessToken = accessToken ?? ""
+                self.retryCount = 0
+                self.refreshTokenRequestStatus = .completed
+
+                // Notify all pending
+                for pending in self.pendingTokenRefreshTransactions {
+                    pending(true)
+                }
+                self.pendingTokenRefreshTransactions.removeAll()
+
+                completed(true)
+            }
+        }
+    }
+
     /// Refresh token
-    private func refreshAuthTokenIfNeeded(completeBlock: @escaping ( _ token: String?, _ error: Error? ) -> Void) {
+    private func refreshAuthTokenIfNeeded(completeBlock: @escaping ( _ token: String?, _ error: Error?) -> Void) {
         let currentAccessToken = self.oidAuthState?.lastTokenResponse?.accessToken
         if self.oidAuthState == nil {
             self.oidAuthState?.performAction(freshTokens: { (accessToken, _, error) in
                 print("error: \(String(describing: error))")
                 if currentAccessToken == accessToken {
-                    DebugPrint.message("Access token was fresh and not updated.")
+                    DebugPrint.info("Access token was fresh and not updated.")
                 } else {
-                    DebugPrint.message("Access token: \(String(describing: accessToken))) was refreshed automatically.")
+                    DebugPrint.info("Access token: \(String(describing: accessToken))) was refreshed automatically.")
                 }
                 completeBlock(accessToken, error)
             })
@@ -234,11 +252,11 @@ extension AppAuthProvider {
     private func manageRetryCounterValue(newValue: Int) {
         self.retryCount = newValue
         if self.retryCount >= kRefreshTokenMaxRetryCount {
-            DebugPrint.message("Reached Maximum retry count:- \(self.retryCount)")
+            DebugPrint.info("Reached Maximum retry count:- \(self.retryCount)")
         } else if self.retryCount == 0 {
-            DebugPrint.message("Reset retry count value:- \(self.retryCount)")
+            DebugPrint.info("Reset retry count value:- \(self.retryCount)")
         }
-        DebugPrint.message("Retry count value:- \(self.retryCount)")
+        DebugPrint.info("Retry count value:- \(self.retryCount)")
     }
 
     private var isTokenEmpty: Bool {
@@ -283,23 +301,37 @@ extension AppAuthProvider {
     }
 
     private func saveState() {
-        do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: self.oidAuthState ?? "",
-                                                        requiringSecureCoding: false)
-            _ = SecureStoreManager.set(data: data, forKey: AppAuthKey.kAuthStateInfo)
-        } catch { }
+        if let authState = self.oidAuthState {
+            let wrapper = AuthStateWrapper(authState: authState)
+            let success = SecureStoreManager.set(wrapper, forKey: AppAuthKey.kAuthStateInfo)
+            DebugPrint.info("Saved auth state: \(success)")
+        }
     }
 
     private func loadState() {
-        guard let data =  SecureStoreManager.getData(key: AppAuthKey.kAuthStateInfo) else { return }
-        guard let authState = try? NSKeyedUnarchiver.unarchivedObject(ofClass: OIDAuthState.self,
-                                                                      from: data) else { return }
-        self.updateOTDAuthState(authState)
+        if let wrapper = SecureStoreManager.get(forKey: AppAuthKey.kAuthStateInfo, as: AuthStateWrapper.self),
+           let authState = wrapper.unwrapped() {
+            self.oidAuthState = authState
+            self.updateOTDAuthState(authState)
+            DebugPrint.info("Get auth state: \(authState)")
+        }
     }
 }
 
 extension AppAuthProvider: OIDAuthStateChangeDelegate {
     func didChange(_ state: OIDAuthState) {
         self.updateOTDAuthState(state)
+    }
+}
+
+struct AuthStateWrapper: Codable {
+    let archivedAuthState: Data
+
+    init(authState: OIDAuthState) {
+        self.archivedAuthState = try! NSKeyedArchiver.archivedData(withRootObject: authState, requiringSecureCoding: true)
+    }
+
+    func unwrapped() -> OIDAuthState? {
+        return try? NSKeyedUnarchiver.unarchivedObject(ofClass: OIDAuthState.self, from: archivedAuthState)
     }
 }

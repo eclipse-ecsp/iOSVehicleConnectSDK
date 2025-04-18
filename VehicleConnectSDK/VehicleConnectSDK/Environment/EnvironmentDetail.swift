@@ -28,7 +28,7 @@ public struct EnvironmentDetail: Codable {
     public let signInUrl: String
     public let signUpUrl: String
     public let redirectUrl: String
-    public let compatibilityUrl: String
+    public let compatibilityUrl: String?
     public let scopes: [String]
 
     enum CodingKeys: String, CodingKey {

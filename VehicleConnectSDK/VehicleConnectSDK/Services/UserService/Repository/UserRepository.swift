@@ -16,14 +16,17 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
+import UIKit
+
 /// Protocol that declares the user repository functions
 protocol UserRepositoryProtocol {
-    func signInWithAppAuth() async -> Result<Bool, CustomError>
-    func signUpWithAppAuth() async -> Result<Bool, CustomError>
+    func signInWithAppAuth(_ vc: UIViewController) async -> Result<Bool, CustomError>
+    func signUpWithAppAuth(_ vc: UIViewController) async -> Result<Bool, CustomError>
     func signOutWithAppAuth() async -> Result<Bool, CustomError>
     func refreshAccessToken() async -> Result<Bool, CustomError>
     func isAuthorizationExpired() -> Bool
     func getUserProfile() async -> Result<Response<UserProfile>, CustomError>
+    func changePassword() async -> Result<Response<ChangePassword>, CustomError>
 }
 
 /// UserRepository defnes the UserRepositoryProtocol functions that sned the api request to process and 
@@ -34,12 +37,12 @@ struct UserRepository: UserRepositoryProtocol {
         client = HTTPClient()
     }
 
-    func signInWithAppAuth() async -> Result<Bool, CustomError> {
-        return await AuthManager.shared.authProtocol.signIn()
+    func signInWithAppAuth(_ vc: UIViewController) async -> Result<Bool, CustomError> {
+        return await AuthManager.shared.authProtocol.signIn(vc)
     }
 
-    func signUpWithAppAuth() async -> Result<Bool, CustomError> {
-        return await AuthManager.shared.authProtocol.signUp()
+    func signUpWithAppAuth(_ vc: UIViewController) async -> Result<Bool, CustomError> {
+        return await AuthManager.shared.authProtocol.signUp(vc)
     }
 
     func signOutWithAppAuth() async -> Result<Bool, CustomError> {
@@ -60,5 +63,10 @@ extension UserRepository {
     func getUserProfile() async -> Result<Response<UserProfile>, CustomError> {
         let result = await client.sendRequest(endpoint: UserEndpoint.profile)
         return await Helper.decoded(result, UserProfile.self)
+    }
+
+    func changePassword() async -> Result<Response<ChangePassword>, CustomError> {
+        let result = await client.sendRequest(endpoint: UserEndpoint.changePassword)
+        return await Helper.decoded(result, ChangePassword.self)
     }
 }

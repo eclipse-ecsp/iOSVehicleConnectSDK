@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
+import Foundation
+
 /// Encodable extension
 extension Encodable {
 ///  convert data object to json

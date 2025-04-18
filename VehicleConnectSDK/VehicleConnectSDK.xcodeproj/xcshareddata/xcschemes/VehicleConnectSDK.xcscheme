@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1540"
-   version = "2.1">
+   LastUpgradeVersion = "1630"
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
@@ -15,21 +15,11 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "505390C82B721F9B003CB731"
+               BlueprintIdentifier = "8782D92A2DAE44E700A5F375"
                BuildableName = "VehicleConnectSDK.framework"
                BlueprintName = "VehicleConnectSDK"
                ReferencedContainer = "container:VehicleConnectSDK.xcodeproj">
             </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <TestPlanReference
-               reference = "container:../VehicleConnectSDK.xctestplan">
-            </TestPlanReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
@@ -37,13 +27,21 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:../VehicleConnectSDK.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8782D9352DAE44E800A5F375"
+               BuildableName = "VehicleConnectSDKTests.xctest"
+               BlueprintName = "VehicleConnectSDKTests"
+               ReferencedContainer = "container:VehicleConnectSDK.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -65,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "505390C82B721F9B003CB731"
+            BlueprintIdentifier = "8782D92A2DAE44E700A5F375"
             BuildableName = "VehicleConnectSDK.framework"
             BlueprintName = "VehicleConnectSDK"
             ReferencedContainer = "container:VehicleConnectSDK.xcodeproj">

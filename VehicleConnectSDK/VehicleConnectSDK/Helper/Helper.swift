@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
+import Foundation
+
 /// Helper class is the  class the contains the utility functions
 struct Helper {
     static var deviceLocale: String {

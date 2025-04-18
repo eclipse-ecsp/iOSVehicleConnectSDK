@@ -16,10 +16,14 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
+import Foundation
+
 /// For  printing the debug message
 public enum DebugPrint {
-    public static func message(_ text: String,
-                               _ fileName: String = #file, _ function: String = #function, _ line: Int = #line) {
+    public static func info(_ text: String,
+                            _ fileName: String = #file,
+                            _ function: String = #function,
+                            _ line: Int = #line) {
 #if DEBUG
         print("\(text) \t fileName:\((fileName as NSString).lastPathComponent), function:\(function), line no:\(line)")
 #endif

@@ -25,12 +25,12 @@ private struct AppManagerKey {
 /// AppManager class that initialise the sdk and cnfifure the environment
 public struct AppManager {
 
-    private static var currentEnvironment: EnvironmentDetail?
+    nonisolated(unsafe) public static var currentEnvironment: EnvironmentDetail?
 
     /// Get the environment details
     public static var environment: EnvironmentDetail? {
         if currentEnvironment == nil {
-            if let contentData = SecureStoreManager.getData(key: AppManagerKey.kEnvironmentConfig),
+            if let contentData = SecureStoreManager.getData(forKey: AppManagerKey.kEnvironmentConfig),
                let content = try? JSONDecoder().decode(EnvironmentDetail.self, from: contentData) {
                 currentEnvironment = content
             }
@@ -43,8 +43,8 @@ public struct AppManager {
     public static func configure(_ environment: EnvironmentDetail) {
         currentEnvironment = environment
         if let contentData = try? JSONEncoder().encode(currentEnvironment) {
-            _ =  SecureStoreManager.delete(itemForKey: AppManagerKey.kEnvironmentConfig)
-            _ = SecureStoreManager.set(data: contentData, forKey: AppManagerKey.kEnvironmentConfig)
+            _ =  SecureStoreManager.delete(forKey: AppManagerKey.kEnvironmentConfig)
+            _ = SecureStoreManager.set(contentData, forKey: AppManagerKey.kEnvironmentConfig)
         }
     }
 }

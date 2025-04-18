@@ -17,6 +17,7 @@
  ********************************************************************************/
 
 import Foundation
+import UIKit
 
 ///  A protocol that declare authentication  properties and function
 public protocol AuthProtocol {
@@ -27,8 +28,8 @@ public protocol AuthProtocol {
     var accessTokenExpirationDate: Date { get set }
     var additionalParameters: [AnyHashable: Any] { get set }
 
-    func signIn() async -> Result<Bool, CustomError>
-    func signUp() async -> Result<Bool, CustomError>
+    func signIn(_ vc: UIViewController) async -> Result<Bool, CustomError>
+    func signUp(_ vc: UIViewController) async -> Result<Bool, CustomError>
     func signOut() async -> Result<Bool, CustomError>
     func refreshAccessToken() async -> Result<Bool, CustomError>
     func isAuthorizedUser() -> Bool

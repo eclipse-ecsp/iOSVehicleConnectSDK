@@ -16,6 +16,8 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
+import Foundation
+
 /// Network error
 public enum NetworkError: Error {
     case invalidURL

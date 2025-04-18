@@ -56,12 +56,14 @@ final class UserServiceTests: XCTestCase {
         let repository:UserRepositoryProtocol = UserRepositoryMock()
         var serviceSut =  UserService()
         serviceSut.userRepository = repository
-        let result = await serviceSut.signInWithAppAuth()
-        switch result {
-        case .success(let status):
-            XCTAssertTrue(status)
-        case .failure:
-            XCTFail("Service Failed to sign In")
+        if let vc = await UIApplication.shared.rootViewController {
+            let result = await serviceSut.signInWithAppAuth(vc)
+            switch result {
+            case .success(let status):
+                XCTAssertTrue(status)
+            case .failure:
+                XCTFail("Service Failed to sign In")
+            }
         }
     }
     
@@ -69,13 +71,15 @@ final class UserServiceTests: XCTestCase {
         let repository:UserRepositoryProtocol = UserRepositoryMock()
         var serviceSut =  UserService()
         serviceSut.userRepository = repository
-        let result = await serviceSut.signUpWithAppAuth()
+        if let vc = await UIApplication.shared.rootViewController {
+            let result = await serviceSut.signUpWithAppAuth(vc)
             switch result {
             case .success(let status):
                 XCTAssertTrue(status)
             case .failure:
                 XCTFail("Service Failed to signup")
             }
+        }
     }
     
     func testIsAuthorizationExpired() async{
@@ -120,14 +124,17 @@ final class UserServiceTests: XCTestCase {
 
 
 struct UserRepositoryMock: UserRepositoryProtocol {
-    
-    func signInWithAppAuth() async -> Result<Bool, CustomError> {
+    func signInWithAppAuth(_ vc: UIViewController) async -> Result<Bool, VehicleConnectSDK.CustomError> {
         return .success(true)
     }
     
-    
-    func signUpWithAppAuth() async -> Result<Bool, CustomError> {
+    func signUpWithAppAuth(_ vc: UIViewController) async -> Result<Bool, VehicleConnectSDK.CustomError> {
         return .success(true)
+    }
+    
+    func changePassword() async -> Result<VehicleConnectSDK.Response<VehicleConnectSDK.ChangePassword>, VehicleConnectSDK.CustomError> {
+        let response = Response(data: Data(), model: ChangePassword(status: true , message: "success"))
+        return .success(response )
     }
     
     func signOutWithAppAuth() async -> Result<Bool, CustomError> {
@@ -154,5 +161,14 @@ extension UserRepository {
     func getUserProfile() async -> Result<Response<UserProfile>, CustomError> {
         let result = await client.sendRequest(endpoint: UserEndpoint.profile)
         return await Helper.decoded(result, UserProfile.self)
+    }
+}
+
+extension UIApplication {
+    var rootViewController: UIViewController? {
+        return UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .filter { $0.activationState == .foregroundActive }
+            .first?.keyWindow?.rootViewController
     }
 }

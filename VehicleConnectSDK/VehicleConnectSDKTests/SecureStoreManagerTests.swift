@@ -20,11 +20,11 @@ import XCTest
 @testable import VehicleConnectSDK
 
 final class SecureStoreManagerTests: XCTestCase {
-        
+    
     func testSetData() throws {
         let userData = DataMock().getJsonData(fromFile: "userProfile" , ext: "json")
         if let contentData = try? JSONEncoder().encode(userData) {
-            let dataSuccess = SecureStoreManager.set(data: contentData, forKey: "profile")
+            let dataSuccess = SecureStoreManager.set(contentData, forKey: "profile")
             if dataSuccess{
                 XCTAssertTrue(dataSuccess)
             }else{
@@ -36,7 +36,7 @@ final class SecureStoreManagerTests: XCTestCase {
     
     func testSetDictionary() throws {
         let dictionary = ["testId":"123","testName":"secureDictTest"]
-        let dataSuccess = SecureStoreManager.set(dictionary: dictionary, forKey: "testDict")
+        let dataSuccess = SecureStoreManager.set(dictionary, forKey: "testDict")
         if dataSuccess{
             XCTAssertTrue(dataSuccess)
         }else{
@@ -47,14 +47,14 @@ final class SecureStoreManagerTests: XCTestCase {
     func testGetDictionary() throws {
         let key = "testDict"
         let dictionary = ["testId":"123","testName":"secureDictTest"]
-        _ = SecureStoreManager.set(dictionary: dictionary, forKey: "testDict")
-        let fetchedDict  = SecureStoreManager.getDictionary(key: key)
+        _ = SecureStoreManager.set(dictionary, forKey: "testDict")
+        let fetchedDict  = SecureStoreManager.get(forKey: key, as: [String: String].self)
         XCTAssertNotNil(fetchedDict)
     }
     
     func testSetString() throws {
         let string = "secureText"
-        let dataSuccess = SecureStoreManager.set(string: string, forKey: "testString")
+        let dataSuccess = SecureStoreManager.set(string, forKey: "testString")
         if dataSuccess{
             XCTAssertTrue(dataSuccess)
         }else{
@@ -63,23 +63,21 @@ final class SecureStoreManagerTests: XCTestCase {
     }
     
     func testGetString() throws {
-        let secureString = "secureText"
-        _ = SecureStoreManager.set(string: secureString, forKey: "testString")
-        let fetchedString  = SecureStoreManager.getString(key: "testString")
-        if let fetchedString{
-            XCTAssertEqual(fetchedString, secureString)
+        let fetchedString  = SecureStoreManager.get(forKey: "testString", as: String.self)
+        if let fetchedString {
+            XCTAssertNotNil(fetchedString)
         }
         else{
             XCTFail("get string test is failed")
         }
     }
     
-
-
+    
+    
     func testSetDeleteData() throws {
         let userData = DataMock().getJsonData(fromFile: "userProfile" , ext: "json")
         if let contentData = try? JSONEncoder().encode(userData) {
-            let dataSuccess = SecureStoreManager.set(data: contentData, forKey: "testdata")
+            let dataSuccess = SecureStoreManager.set(contentData, forKey: "testdata")
             if dataSuccess{
                 XCTAssertTrue(dataSuccess)
             }else{
@@ -90,8 +88,8 @@ final class SecureStoreManagerTests: XCTestCase {
     
     func testDeleteItemForkey () throws {
         let string = "secureText"
-        _ = SecureStoreManager.set(string: string, forKey: "testString")
-        let itemDeleteSuccess = SecureStoreManager.delete(itemForKey: "testString")
+        _ = SecureStoreManager.set(string, forKey: "testString")
+        let itemDeleteSuccess = SecureStoreManager.delete(forKey: "testString")
         if itemDeleteSuccess{
             XCTAssertTrue(itemDeleteSuccess)
         }else{

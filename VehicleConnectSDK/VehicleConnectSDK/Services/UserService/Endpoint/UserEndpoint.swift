@@ -21,6 +21,7 @@ enum UserEndpoint {
     case signIn
     case signUp
     case signOut
+    case changePassword
     case authToken
     case profile
     case refreshAccessToken
@@ -41,9 +42,11 @@ extension UserEndpoint: Endpoint {
         case .signIn:
             return "oauth2/authorize"
         case .signUp:
-            return "sign-up/"
+            return "sign-up"
         case .signOut:
             return "?token=\(AuthManager.shared.authProtocol.accessToken)"
+        case .changePassword:
+            return "v1/users/self/recovery/resetpassword"
         case .authToken:
             return "oauth2/token"
         case .profile:
@@ -61,7 +64,12 @@ extension UserEndpoint: Endpoint {
     }
 
     var method: RequestMethod {
-        return .get
+        switch self {
+        case .changePassword:
+            return .post
+        default:
+            return .get
+        }
     }
 
     var body: Any? {

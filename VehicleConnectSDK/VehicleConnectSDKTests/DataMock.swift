@@ -18,6 +18,7 @@
 
 
 @testable import VehicleConnectSDK
+import Foundation
 
 
 extension RemoteOperationRepositoryProtocol {
@@ -104,7 +105,7 @@ class HTTPClientMock: HTTPClientProtocol {
     func sendRequest(endpoint: any Endpoint) async -> Result<Data, NetworkError> {
         
         let urlString = endpoint.baseUrl + endpoint.path
-        DebugPrint.message("URL: \(urlString)")
+        DebugPrint.info("URL: \(urlString)")
         guard let url = URL(string: urlString) else {
             return .failure(.invalidURL)
         }
@@ -112,11 +113,11 @@ class HTTPClientMock: HTTPClientProtocol {
         request.httpMethod = endpoint.method.rawValue
         if let httpHeader = endpoint.header {
             request.allHTTPHeaderFields = httpHeader
-            DebugPrint.message("Headers: \(httpHeader)")
+            DebugPrint.info("Headers: \(httpHeader)")
         }
         if let body = endpoint.body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-            DebugPrint.message("Body: \(body)")
+            DebugPrint.info("Body: \(body)")
         }
         
         return await send(request)

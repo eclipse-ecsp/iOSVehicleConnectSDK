@@ -16,17 +16,18 @@
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
 
+import Foundation
+
 public extension String {
     /// Used to validate url
     var isValidURL: Bool {
         let regEx =
-        "^(https?://)?(www\\.)?([-a-z0-9]{1,63}\\.)*?[a-z0-9]" +
-        "[-a-z0-9]{0,61}[a-z0-9]\\.[a-z]{2,6}(/[-\\w@\\+\\.~#\\?&/=%]*)?$"
+        "http[s]?://(([^/:.[:space:]]+(.[^/:.[:space:]]+)*)|([0-9](.[0-9]{3})))(:[0-9]+)?((/[^?#[:space:]]+)([^#[:space:]]+)?(#.+)?)?"
         let predicate = NSPredicate(format: "SELF MATCHES %@", argumentArray: [regEx])
         return predicate.evaluate(with: self)
     }
     var json: Any {
         guard let json = try? JSONSerialization.jsonObject(with: Data(self.utf8), options: [])  else { return [:] }
         return json
-        }
     }
+}

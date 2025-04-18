@@ -1,14 +1,14 @@
 PODS:
-  - AppAuth (1.6.0):
-    - AppAuth/Core (= 1.6.0)
-    - AppAuth/ExternalUserAgent (= 1.6.0)
-  - AppAuth/Core (1.6.0)
-  - AppAuth/ExternalUserAgent (1.6.0):
+  - AppAuth (1.7.6):
+    - AppAuth/Core (= 1.7.6)
+    - AppAuth/ExternalUserAgent (= 1.7.6)
+  - AppAuth/Core (1.7.6)
+  - AppAuth/ExternalUserAgent (1.7.6):
     - AppAuth/Core
-  - SwiftLint (0.54.0)
+  - SwiftLint (0.59.0)
 
 DEPENDENCIES:
-  - AppAuth (= 1.6.0)
+  - AppAuth (= 1.7.6)
   - SwiftLint
 
 SPEC REPOS:
@@ -17,9 +17,9 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  AppAuth: 8fca6b5563a5baef2c04bee27538025e4ceb2add
-  SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
+  AppAuth: d4f13a8fe0baf391b2108511793e4b479691fb73
+  SwiftLint: bb7ba8326d0d93e60d6d1715fc7d4609dec5c76d
 
-PODFILE CHECKSUM: 2af3f849be1fdf3aeb9e9b2c5083d8969ea91eca
+PODFILE CHECKSUM: 7f9b4eb3bf69a882ac03705df7d920a0d63d1787
 
 COCOAPODS: 1.16.2

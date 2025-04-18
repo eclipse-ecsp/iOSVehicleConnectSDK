@@ -20,12 +20,12 @@ import Foundation
 
 /// Authentication manager  shared class that inject  the authentication dependencies using AuthProtocol
 public class AuthManager {
-    public static let shared = AuthManager()
+    nonisolated(unsafe) public static let shared = AuthManager()
     @Injected(\.authProtocol) public var authProtocol: AuthProtocol
 }
 
 struct AppAuthManagerKey: InjectionKey {
-    static var currentValue: AuthProtocol = AppAuthProvider.initialize()
+    nonisolated(unsafe) static var currentValue: AuthProtocol = AppAuthProvider.initialize()
 }
 
 extension InjectedValues {
