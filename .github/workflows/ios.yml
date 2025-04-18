@@ -28,6 +28,7 @@ jobs:
 
     - name: Build Framework
       run: |
+        cd VehicleConnectSDK &&
         xcodebuild clean archive \
           -scheme VehicleConnectSDK \
           -destination 'generic/platform=iOS' \
