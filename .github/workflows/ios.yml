@@ -29,6 +29,10 @@ jobs:
         pod repo update
         pod install
 
+    - name: Patch Deployment Target
+      run: |
+        find VehicleConnectSDK -name "project.pbxproj" -print0 | xargs -0 sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = 18.4;/IPHONEOS_DEPLOYMENT_TARGET = 18.2;/g'
+
     - name: Build Framework
       run: |
         cd VehicleConnectSDK
