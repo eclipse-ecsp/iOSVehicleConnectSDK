@@ -54,7 +54,10 @@ VehicleConnectSDK has the capability to make a connection to the cloud and get t
     or Download the sample app  https://github.com/eclipse-ecsp/iOSVehicleConnectApp and see how you can call API methods
 
  
+### CocoaPods
+With [CocoaPods](https://guides.cocoapods.org/using/getting-started.html), add the following line to your Podfile:
 
+pod 'VehicleConnectSDK'
 
 ### Coding style check configuration
 
