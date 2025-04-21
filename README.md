@@ -57,7 +57,7 @@ VehicleConnectSDK has the capability to make a connection to the cloud and get t
 ### CocoaPods
 With [CocoaPods](https://guides.cocoapods.org/using/getting-started.html), add the following line to your Podfile:
 
-pod 'VehicleConnectSDK'
+    pod 'VehicleConnectSDK'
 
 ### Coding style check configuration
 
