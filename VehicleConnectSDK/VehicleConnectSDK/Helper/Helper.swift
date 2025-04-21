@@ -41,6 +41,7 @@ struct Helper {
             guard let decodedResponse = try? JSONDecoder().decode(responseModel, from: responseData) else {
                 return .failure(.decode)
             }
+            DebugPrint.info("Decoded Response: \(decodedResponse)")
             let respone = Response(data: responseData, model: decodedResponse)
             return .success(respone)
         case .failure(let error):

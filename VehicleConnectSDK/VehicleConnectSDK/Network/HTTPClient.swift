@@ -54,7 +54,6 @@ class HTTPClient: HTTPClientProtocol {
         do {
             DebugPrint.info("Request: \(request)")
             let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
-            DebugPrint.info("Response: \(response)")
             guard let response = response as? HTTPURLResponse else {
                 return .failure(.noResponse)
             }
