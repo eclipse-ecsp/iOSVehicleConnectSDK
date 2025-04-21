@@ -325,13 +325,24 @@ extension AppAuthProvider: OIDAuthStateChangeDelegate {
 }
 
 struct AuthStateWrapper: Codable {
-    let archivedAuthState: Data
+    let archivedAuthState: Data?
 
-    init(authState: OIDAuthState) {
-        self.archivedAuthState = try! NSKeyedArchiver.archivedData(withRootObject: authState, requiringSecureCoding: true)
+    init?(authState: OIDAuthState) {
+        do {
+            self.archivedAuthState = try NSKeyedArchiver.archivedData(withRootObject: authState, requiringSecureCoding: true)
+        } catch {
+            print("Error archiving authState: \(error)")
+            return nil  // Returning nil if archiving fails
+        }
     }
 
     func unwrapped() -> OIDAuthState? {
-        return try? NSKeyedUnarchiver.unarchivedObject(ofClass: OIDAuthState.self, from: archivedAuthState)
+        guard let data = archivedAuthState else { return nil }
+        do {
+            return try NSKeyedUnarchiver.unarchivedObject(ofClass: OIDAuthState.self, from: data)
+        } catch {
+            print("Error unarchiving authState: \(error)")
+            return nil  // Returning nil if unarchiving fails
+        }
     }
 }
