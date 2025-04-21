@@ -20,16 +20,17 @@ jobs:
 
     - name: Install CocoaPods
       run: brew install --formula cocoapods
-  
+
     - name: Install Dependencies
-      run: 
-       cd VehicleConnectSDK
-       pod install
+      run: |
+        cd VehicleConnectSDK
+        pod repo update
+        pod install
 
     - name: Build Framework
       run: |
-        cd VehicleConnectSDK 
-        
+        cd VehicleConnectSDK
+
         xcodebuild clean archive \
           -scheme VehicleConnectSDK \
           -destination 'generic/platform=iOS' \
@@ -53,4 +54,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: VehicleConnectSDK.xcframework
-        path: VehicleConnectSDK.xcframework
+        path: VehicleConnectSDK/VehicleConnectSDK.xcframework
