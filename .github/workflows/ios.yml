@@ -18,7 +18,7 @@ jobs:
     - name: Set Xcode Version
       uses: maxim-lobanov/setup-xcode@v1
       with:
-        xcode-version: '16.2.0'
+        xcode-version: '16.2.0'  # Ensure this matches your project's Xcode version
 
     - name: Install CocoaPods
       run: brew install --formula cocoapods
@@ -27,7 +27,7 @@ jobs:
       run: |
         cd VehicleConnectSDK
         pod repo update
-        pod install
+        pod install  # Install dependencies from Podfile
 
     - name: Patch Deployment Target
       run: |
@@ -37,11 +37,13 @@ jobs:
       run: |
         cd VehicleConnectSDK
         rm -rf ~/Library/Developer/Xcode/DerivedData
-    
+        xcodebuild clean -workspace VehicleConnectSDK.xcworkspace -scheme VehicleConnectSDK -configuration Release
+
     - name: Build Framework
       run: |
         cd VehicleConnectSDK
         xcodebuild clean archive \
+          -workspace VehicleConnectSDK.xcworkspace \
           -scheme VehicleConnectSDK \
           -destination 'generic/platform=iOS' \
           -archivePath $PWD/build/ios_devices.xcarchive \
@@ -50,6 +52,7 @@ jobs:
           -verbose
 
         xcodebuild clean archive \
+          -workspace VehicleConnectSDK.xcworkspace \
           -scheme VehicleConnectSDK \
           -destination 'generic/platform=iOS Simulator' \
           -archivePath $PWD/build/ios_simulator.xcarchive \
