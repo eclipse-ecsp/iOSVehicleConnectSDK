@@ -20,11 +20,11 @@ jobs:
 
       - name: Run Tests with Coverage
         run: |
-          cd VehicleConnectSDK  # ✅ First, change directory
+          cd VehicleConnectSDK  
           xcodebuild \
             -workspace VehicleConnectSDK.xcworkspace \
             -scheme VehicleConnectSDKTests \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.0' \
+            -destination 'platform=iOS Simulator,name=iPhone 15' \
             -enableCodeCoverage YES \
             test \
             | xcpretty
