@@ -18,16 +18,17 @@ jobs:
       - name: Set Xcode version
         run: sudo xcode-select -s /Applications/Xcode_16.2.app  # update as needed
 
-      - name: Run Tests
+      - name: Run Tests with Coverage
         run: |
+          cd VehicleConnectSDK  # ✅ First, change directory
           xcodebuild \
-            cd VehicleConnectSDK
             -workspace VehicleConnectSDK.xcworkspace \
             -scheme VehicleConnectSDKTests \
             -destination 'platform=iOS Simulator,name=iPhone 14,OS=17.0' \
             -enableCodeCoverage YES \
             test \
-            | xcpretty --report junit --report html --report json
+            | xcpretty
+
 
       - name: Convert coverage to lcov
         run: |
