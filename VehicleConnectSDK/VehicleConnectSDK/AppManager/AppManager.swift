@@ -30,10 +30,10 @@ public struct AppManager {
     /// Get the environment details
     public static var environment: EnvironmentDetail? {
         if currentEnvironment == nil {
-            if let contentData = SecureStoreManager.getData(forKey: AppManagerKey.kEnvironmentConfig),
-               let content = try? JSONDecoder().decode(EnvironmentDetail.self, from: contentData) {
-                currentEnvironment = content
-            }
+            if let environment: EnvironmentDetail =
+                SecureStoreManager.get(forKey: AppManagerKey.kEnvironmentConfig, as: EnvironmentDetail.self) {
+                currentEnvironment = environment
+             }
         }
         return currentEnvironment
     }
@@ -42,9 +42,6 @@ public struct AppManager {
     /// - Parameter environment: evnvironment details
     public static func configure(_ environment: EnvironmentDetail) {
         currentEnvironment = environment
-        if let contentData = try? JSONEncoder().encode(currentEnvironment) {
-            _ =  SecureStoreManager.delete(forKey: AppManagerKey.kEnvironmentConfig)
-            _ = SecureStoreManager.set(contentData, forKey: AppManagerKey.kEnvironmentConfig)
-        }
+        _ = SecureStoreManager.set(environment, forKey: AppManagerKey.kEnvironmentConfig)
     }
 }

@@ -67,6 +67,14 @@ extension UserRepository {
 
     func changePassword() async -> Result<Response<ChangePassword>, CustomError> {
         let result = await client.sendRequest(endpoint: UserEndpoint.changePassword)
-        return await Helper.decoded(result, ChangePassword.self)
+        switch result {
+        case .success(let responseData):
+            let decodedResponse = ChangePassword(status: true, message: "Success")
+            let respone = Response(data: responseData, model: decodedResponse)
+            return .success(respone)
+        case .failure(let error):
+            return .failure(.networkError(error))
+            // return await Helper.decoded(result, ChangePassword.self)
+        }
     }
 }
