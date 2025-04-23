@@ -1,0 +1,43 @@
+name: iOS Test & Coverage
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Run Tests with Coverage
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set Xcode version
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app  # update as needed
+
+      - name: Run Tests
+        run: |
+          xcodebuild \
+            -scheme YourSchemeName \
+            -destination 'platform=iOS Simulator,name=iPhone 14,OS=17.0' \
+            -enableCodeCoverage YES \
+            test \
+            | xcpretty --report junit --report html --report json
+
+      - name: Convert coverage to lcov
+        run: |
+          brew install lcov
+          xcrun llvm-cov export \
+            -format="lcov" \
+            .build/debug/YourExecutable \
+            -instr-profile .build/debug/codecov/default.profdata \
+            > coverage.lcov
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: coverage.lcov
+          token: ${{ secrets.CODECOV_TOKEN }}  # Optional for public repos
