@@ -38,7 +38,7 @@ jobs:
           xchtmlreport -r TestResults.xcresult -o CoverageHTML
 
       - name: Upload HTML Report as Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: code-coverage-html
           path: CoverageHTML
