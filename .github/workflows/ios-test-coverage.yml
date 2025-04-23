@@ -31,7 +31,9 @@ jobs:
 
       - name: Extract Coverage Using xcresulttool
         run: |
-          xcresulttool pull --path TestResults.xcresult --output report.json
+          /Applications/Xcode_16.2.app/Contents/Developer/usr/bin/xcresulttool \
+          get --path TestResults.xcresult \
+          --output-format json > code-coverage-report.json
 
       - name: Upload Coverage Report Artifact
         uses: actions/upload-artifact@v4
