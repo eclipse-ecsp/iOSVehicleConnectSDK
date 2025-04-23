@@ -21,6 +21,7 @@ jobs:
       - name: Run Tests
         run: |
           xcodebuild \
+            -workspace VehicleConnectSDK.xcworkspace \
             -scheme VehicleConnectSDKTests \
             -destination 'platform=iOS Simulator,name=iPhone 14,OS=17.0' \
             -enableCodeCoverage YES \
