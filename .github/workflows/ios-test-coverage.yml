@@ -29,18 +29,16 @@ jobs:
             test \
             | xcpretty
 
-
-      - name: Convert coverage to lcov
+      - name: Install XCTestHTMLReport
         run: |
-          brew install lcov
-          xcrun llvm-cov export \
-            -format="lcov" \
-            .build/debug/YourExecutable \
-            -instr-profile .build/debug/codecov/default.profdata \
-            > coverage.lcov
+          brew install xchtmlreport
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+      - name: Convert .xcresult to HTML
+        run: |
+          xchtmlreport -r TestResults.xcresult -o CoverageHTML
+
+      - name: Upload HTML Report as Artifact
+        uses: actions/upload-artifact@v3
         with:
-          files: coverage.lcov
-          token: ${{ secrets.CODECOV_TOKEN }}  # Optional for public repos
+          name: code-coverage-html
+          path: CoverageHTML
