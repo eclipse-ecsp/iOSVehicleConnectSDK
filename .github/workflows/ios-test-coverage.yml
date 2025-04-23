@@ -1,46 +1,67 @@
-name: iOS Test & Coverage
+name: iOS Unit Tests with Code Coverage
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   test:
-    name: Run Tests with Coverage
-    runs-on: macos-latest
+    name: Run iOS Tests and Generate Code Coverage
+    runs-on: macos-13
 
     steps:
-      - name: Checkout
+      - name: 🔄 Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set Xcode version
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+      - name: 📦 Set up Ruby environment
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
 
-      - name: Install xcpretty
+      - name: 🔧 Install xcpretty
         run: gem install xcpretty
 
-      - name: Run Tests with Coverage
+      - name: 📲 Set up Xcode
+        run: sudo xcode-select -s /Applications/Xcode_15.0.app
+
+      - name: 💾 Cache CocoaPods
+        uses: actions/cache@v3
+        with:
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+
+      - name: 📦 Install CocoaPods
+        run: pod install
+
+      - name: 🧪 Run Unit Tests with Coverage
         run: |
-          cd VehicleConnectSDK  
           xcodebuild \
             -workspace VehicleConnectSDK.xcworkspace \
             -scheme VehicleConnectSDKTests \
-            -destination 'platform=iOS Simulator,OS=17.0.1,name=iPhone 15' \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0.1' \
+            -derivedDataPath DerivedData \
             -enableCodeCoverage YES \
-            -resultBundlePath TestResults.xcresult \
-            test \
-            | xcpretty
+            test | xcpretty --test --color
 
-      - name: Extract Coverage Using xcresulttool
+      - name: 📊 Export Coverage Report
         run: |
-          /Applications/Xcode_16.2.app/Contents/Developer/usr/bin/xcresulttool \
-          get --path VehicleConnectSDK/TestResults.xcresult \
-          --output-format json > code-coverage-report.json
+          mkdir -p coverage
+          RESULT_BUNDLE=$(find DerivedData/Logs/Test -name '*.xcresult' | head -n 1)
 
-      - name: Upload Coverage Report Artifact
+          if [[ -z "$RESULT_BUNDLE" ]]; then
+            echo "❌ No xcresult found!"
+            exit 1
+          fi
+
+          xcrun xccov view --report "$RESULT_BUNDLE" > coverage/coverage.txt
+          xcrun xccov view --json "$RESULT_BUNDLE" > coverage/coverage.json
+
+      - name: 📤 Upload Coverage Report Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: code-coverage-report
-          path: code-coverage-report.json
+          name: ios-coverage
+          path: coverage.json
