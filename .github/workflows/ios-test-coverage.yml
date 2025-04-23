@@ -24,21 +24,17 @@ jobs:
           xcodebuild \
             -workspace VehicleConnectSDK.xcworkspace \
             -scheme VehicleConnectSDKTests \
-            -destination 'platform=iOS Simulator,name=iPhone 14,OS=17.0' \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.0' \
             -enableCodeCoverage YES \
             test \
             | xcpretty
 
-      - name: Install XCTestHTMLReport
+      - name: Extract Coverage Using xcresulttool
         run: |
-          brew install xchtmlreport
+          xcresulttool pull --path TestResults.xcresult --output report.json
 
-      - name: Convert .xcresult to HTML
-        run: |
-          xchtmlreport -r TestResults.xcresult -o CoverageHTML
-
-      - name: Upload HTML Report as Artifact
+      - name: Upload Coverage Report Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: code-coverage-html
-          path: CoverageHTML
+          name: code-coverage-report
+          path: code-coverage-report.json
