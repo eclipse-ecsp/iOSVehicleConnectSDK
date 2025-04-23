@@ -23,19 +23,20 @@ jobs:
       - name: 🔧 Install xcpretty
         run: gem install xcpretty
 
-      - name: 📲 Set up Xcode
-        run: sudo xcode-select -s /Applications/Xcode_15.0.app
 
-      - name: 💾 Cache CocoaPods
-        uses: actions/cache@v3
-        with:
-          path: Pods
-          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-pods-
+      - name: Set Xcode Version
+          uses: maxim-lobanov/setup-xcode@v1
+          with:
+            xcode-version: '16.2.0'  # Ensure this matches your project's Xcode version
 
-      - name: 📦 Install CocoaPods
-        run: pod install
+    - name: Install CocoaPods
+      run: brew install --formula cocoapods
+
+    - name: Install Dependencies
+      run: |
+        cd VehicleConnectSDK
+        pod repo update
+        pod install  # Install dependencies from Podfile
 
       - name: 🧪 Run Unit Tests with Coverage
         run: |
