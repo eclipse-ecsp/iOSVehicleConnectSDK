@@ -96,5 +96,11 @@ final class SecureStoreManagerTests: XCTestCase {
             XCTFail("Set data test is failed")
         }
     }
+    
+    func testJsonDataLog() throws {
+        let userData = DataMock().getJsonData(fromFile: "userProfile" , ext: "json")
+        DebugPrint.info("Response: \(String(describing: userData.json))")
+        XCTAssertNotNil(userData.json)
+    }
 }
 
