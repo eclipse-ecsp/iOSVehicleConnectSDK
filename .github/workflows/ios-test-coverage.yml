@@ -26,7 +26,7 @@ jobs:
       - name: 🔧 Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '16.2.0'
+          xcode-version: '15.2.0'
 
       - name: 📦 Install CocoaPods
         run: brew install --formula cocoapods
