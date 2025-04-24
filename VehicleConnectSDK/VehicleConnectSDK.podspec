@@ -9,14 +9,14 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "VehicleConnectSDK"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.4"
   spec.summary      = "VehicleConnectSDK provide API interface for User Management and Remote Operation."
   spec.description  = <<-DESC
   VehicleConnectSDK provide API interface for Remote Operation, User Authentication, Vehicle Profile, Vehicle Association. So remote operations mobile apps can be designed by using the VehcleConnectSDK.
                    DESC
 
   spec.homepage     = "https://github.com/eclipse-ecsp/iOSVehicleConnectSDK"
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
+  spec.license      = { :type => "Apache", :file => "LICENSE" }
   spec.author       = { "Vishwajeet-Kumar32" => "vishwajeetkumarji@gmail.com" }
   
   # spec.platform     = :ios
@@ -31,7 +31,7 @@ Pod::Spec.new do |spec|
 
 
     spec.source       = { :git => "https://github.com/eclipse-ecsp/iOSVehicleConnectSDK.git", :tag => "#{spec.version}" }
-    spec.source_files  = "VehicleConnectSDK/VehicleConnectSDK/**/*.{swift,h,m}"
+    spec.source_files  = "VehicleConnectSDK/**/*.swift"
     spec.exclude_files = "VehicleConnectSDK/VehicleConnectSDKTests/**/*Tests.swift"
     
     spec.requires_arc = true
