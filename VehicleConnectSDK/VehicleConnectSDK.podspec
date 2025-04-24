@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "VehicleConnectSDK"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
   spec.summary      = "VehicleConnectSDK provide API interface for User Management and Remote Operation."
   spec.description  = <<-DESC
   VehicleConnectSDK provide API interface for Remote Operation, User Authentication, Vehicle Profile, Vehicle Association. So remote operations mobile apps can be designed by using the VehcleConnectSDK.

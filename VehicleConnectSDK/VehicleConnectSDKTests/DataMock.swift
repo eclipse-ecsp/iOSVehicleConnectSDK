@@ -92,7 +92,7 @@ class DataMock {
     }
     func getJsonData(fromFile name: String, ext: String = "json") -> Data {
         let bundle = Bundle(for: Self.self)
-        let url = bundle.url(forResource: name, withExtension: ext)!
+        guard let url = bundle.url(forResource: name, withExtension: ext) else { return Data() }
         guard let data = try? Data(contentsOf: url) else { return Data() }
         return data
     }
@@ -194,17 +194,15 @@ class HTTPClientMock: HTTPClientProtocol {
                 return.failure(.unexpectedStatusCode)
             }
     }
-    
-    
 }
 
-extension URLSession {
-
-      func data(for request: URLRequest, delegate: (any URLSessionTaskDelegate)? = nil) async throws -> (Data, URLResponse) {
-          let urlResponse :  URLResponse = URLResponse.init(url: request.url!, mimeType: .none, expectedContentLength: .max, textEncodingName: "mockapi")
-          let dataMock = DataMock()
-          let data = dataMock.getJsonData(fromFile: "roHistory")
-          return (data, urlResponse)
-          
-              }
-}
+//extension URLSession {
+//
+//    func data(for request: URLRequest, delegate: (any URLSessionTaskDelegate)? = nil) async throws -> (Data, URLResponse) {
+//        let urlResponse :  URLResponse = URLResponse.init(url: request.url!, mimeType: .none, expectedContentLength: .max, textEncodingName: "mockapi")
+//        let dataMock = DataMock()
+//        let data = dataMock.getJsonData(fromFile: "roHistory")
+//        return (data, urlResponse)
+//
+//    }
+//}

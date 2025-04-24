@@ -55,9 +55,6 @@ class HTTPClient: HTTPClientProtocol {
             DebugPrint.info("Request: \(request)")
             let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
             
-//            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
-//            DebugPrint.info("Response: \(jsonObject)")
-            
             guard let response = response as? HTTPURLResponse else {
                 return .failure(.noResponse)
             }
