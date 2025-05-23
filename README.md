@@ -1,23 +1,30 @@
 
-![logo](https://github.com/user-attachments/assets/169d421d-2ec3-4e12-85ff-a8bbd44487c9)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c36c5136-9448-423e-b30b-ed96aa5f8363" width="300" height="150"/>
+</div>
 
-# VehicleConnectSDK
-  iOS VehicleConnectSDK provide API interface for Remote Operation, User Authentication, Vehicle Profile, Vehicle Association. So remote operations mobile apps can be designed by using the VehcleConnectSDK.
+# iOS VehicleConnectSDK
+
+[![Build](https://github.com/eclipse-ecsp/iOSVehicleConnectSDK/actions/workflows/ios.yml/badge.svg)](https://github.com/eclipse-ecsp/iOSVehicleConnectSDK/actions/workflows/ios.yml)
+[![License Compliance](https://github.com/eclipse-ecsp/iOSVehicleConnectSDK/actions/workflows/license-compliance.yml/badge.svg)](https://github.com/eclipse-ecsp/iOSVehicleConnectSDK/actions/workflows/license-compliance.yml)
+
+Vehicle Connect SDK provides APIs for user authentication using App Auth library, remote operations, vehicle profile management, and vehicle association. It enables mobile applications to be developed with integrated remote vehicle control functionality.
+
+The Vehicle Connect SDK is written in swift and is compatible with iOS 15 and above.
+It is capable of establishing a connection to the cloud and retrieving both structured model objects and raw response data.
 
 # Table of Contents
 * [Getting Started](#getting-started)
 * [Usage](#usage)
-* [How to contribute](#how-to-contribute)
 * [Built with Dependencies](#built-with-dependencies)
+* [How to contribute](#how-to-contribute)
 * [Code of Conduct](#code-of-conduct)
-* [Authors](#authors)
+* [Contributors](#contributors)
 * [Security Contact Information](#security-contact-information)
 * [Support](#support)
 * [Troubleshooting](#troubleshooting)
 * [License](#license)
 * [Announcements](#announcements)
-* [Acknowledgments](#acknowledgments)
-
 
 ## Getting Started
 
@@ -26,7 +33,7 @@ Take clone of the peoject by using the below command and repository path and set
 
 Design Overview of VehicleConnectSDK
 
-<img width="1162" alt="sdk_design" src="https://github.com/user-attachments/assets/8682f027-d5da-4753-b130-b327d2277f81">
+<img width="1162" alt="VehicleConnectSDK Architecture" src="https://github.com/user-attachments/assets/1aef658c-1793-4849-a384-2afed3782713">
 
  Developer documentation
  
